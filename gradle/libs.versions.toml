@@ -1,0 +1,30 @@
+[versions]
+kotlinCommon = "1.9.25"
+kotlinAtcoder = "1.8.20"
+kotlinCodeforces = "1.9.21"
+
+# test
+junit = "5.11.3"
+kotlinxCoroutines = "1.8.0"
+ktor = "3.0.1"
+jsoup = "1.18.1"
+
+[libraries]
+junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+ktorClientCore = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktorClientCio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
+
+[plugins]
+kotlinCommonGradlePlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinCommon" }
+kotlinAtcoderGradlePlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinAtcoder" }
+kotlinCodeforcesGradlePlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinCodeforces" }
+
+[bundles]
+testing = [
+    "junitJupiter",
+    "kotlinxCoroutinesCore",
+    "ktorClientCore",
+    "ktorClientCio"
+]
