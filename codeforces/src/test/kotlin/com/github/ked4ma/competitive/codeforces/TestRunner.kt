@@ -32,7 +32,7 @@ class TestRunner {
             val task = System.getProperty("task")?.takeIf(String::isNotBlank) ?: "A"
             val branch = System.getProperty("branch")?.takeIf(String::isNotBlank)
                 ?: runShell("git", "branch", "--show-current")
-            val contestRegex = "contest/(.+)".toRegex()
+            val contestRegex = "contest/\\w+/(.+)".toRegex()
             val contestDir = contestRegex.matchEntire(branch)?.groupValues?.get(1)
                 ?: throw RuntimeException("$branch is not a valid name")
             println("$branch, $task")
