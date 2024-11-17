@@ -46,7 +46,9 @@ endif
 	    echo "[INFO] $(CONTEST_BRANCH) is already finished."; \
 	else \
 	    echo "[INFO] preparing for the $(PLATFORM) contest ($(CONTEST))"; \
-	    # git stash; \
+	    git stash; \
+	    git switch main; \
+	    git pull origin main; \
 	    git switch -c contest/$(PLATFORM)/$(CONTEST_BRANCH); \
 	    mkdir -p $(PLATFORM)/src/main/kotlin/com/github/ked4ma/competitive/$(PLATFORM)/$(CONTEST_BRANCH); \
 	fi
