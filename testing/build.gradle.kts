@@ -14,6 +14,7 @@ dependencies {
     implementation(libs.ktorClientCore)
     implementation(libs.ktorClientCio)
     implementation(libs.jsoup)
+    implementation(libs.kotlinxSerializationJson)
     testImplementation(libs.junitJupiter)
 }
 

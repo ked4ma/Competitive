@@ -27,7 +27,7 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
+!script/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
@@ -45,3 +45,4 @@ bin/
 .DS_Store
 
 secret-*.conf
+session-*.json

@@ -1,17 +1,21 @@
-package com.github.ked4ma.competitive.atcoder
+package com.github.ked4ma.competitive.training
 
 import com.github.ked4ma.competitive.test.Platform
 import com.github.ked4ma.competitive.test.Runner
-import com.github.ked4ma.competitive.test.runShell
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.joinAll
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
+import java.io.PipedOutputStream
+import java.lang.reflect.Method
 
 class TestRunner {
-
     @ParameterizedTest
     @MethodSource("sampleProvider")
     fun testEachSample(input: String, expected: String) = runBlocking {
@@ -22,29 +26,41 @@ class TestRunner {
         assertEquals(expected, actualWithoutDebug)
     }
 
+    private suspend fun execSample(
+        method: Method,
+        input: String,
+        outputStream: PipedOutputStream
+    ) = coroutineScope {
+        listOf(
+            launch {
+                method.invoke(null)
+            },
+            launch(Dispatchers.IO) {
+                outputStream.write("$input\n".toByteArray())
+                outputStream.flush()
+            }
+        ).joinAll()
+    }
+
     companion object {
         private lateinit var RUNNER: Runner
 
         @BeforeAll
         @JvmStatic
         fun setup() {
-            val task = System.getProperty("task")?.takeIf(String::isNotBlank) ?: "A"
-            val branch = System.getProperty("branch")?.takeIf(String::isNotBlank)
-                ?: runShell("git", "branch", "--show-current")
-            val contestRegex = "contest/\\w+/(.+)".toRegex()
-            val contestDir = contestRegex.matchEntire(branch)?.groupValues?.get(1)
-                ?: throw RuntimeException("$branch is not a valid name")
-            println("$branch, $task")
-            println(contestDir)
+            val clazz = Class.forName("com.github.ked4ma.competitive.training.code.CodeKt")
+            val platform = Platform.valueOf((clazz.getDeclaredField("PLATFORM").get(clazz) as String).uppercase())
+            val contest = clazz.getDeclaredField("CONTEST").get(clazz) as String
+            val task = clazz.getDeclaredField("TASK").get(clazz) as String
+            val method = clazz.getMethod("main")
+
+            println("$platform: $contest/$task")
             RUNNER = Runner(
                 platform = Platform.ATCODER,
-                basePackage = "com.github.ked4ma.competitive.atcoder",
-                contestDir = contestDir,
-                task = task
+                contestDir = contest,
+                task = task,
+                method = method,
             )
-            runBlocking {
-                RUNNER.setup()
-            }
         }
 
         @JvmStatic

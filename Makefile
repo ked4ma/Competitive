@@ -35,8 +35,6 @@ ifneq ($(RUN_ARGS_LEN), 2)
 endif
 	$(eval PLATFORM := $(word 1, $(RUN_ARGS)))
 	$(eval CONTEST_BRANCH := $(word 2, $(RUN_ARGS)))
-	@echo $(PLATFORM)
-	@echo $(CONTEST_BRANCH)
 	@if [ "$(filter $(PLATFORM),$(PLATFORMS))" != "$(PLATFORM)" ]; then \
 	    echo "[ERROR] $(PLATFORM) is unknown platform ($(PLATFORMS)))"; \
 	elif [ $(BRANCH) = "contest/$(PLATFORM)/$(CONTEST_BRANCH)" ]; then \
@@ -59,7 +57,9 @@ run:
 	        $(PLATFORM):test --tests "com.github.ked4ma.competitive.$(PLATFORM).TestRunner" -Dtask=$(TASK_FILENAME) -Dbranch=$(BRANCH)
 
 format:
-	@echo "TODO"
+	@echo "[Info] Format for submitting $(CONTEST)/$(TASK) ($(PLATFORM))."
+	./script/format.sh $(PLATFORM) $(CONTEST_BRANCH) $(TASK_FILENAME)
+	@echo "[Info] Copied to Clipboard."
 
 finish:
 	@echo "[Info] Finish $(PLATFORM) $(CONTEST_BRANCH)"
@@ -73,7 +73,15 @@ finish:
 clean:
 	./gradlew clean
 
+training:
+	./gradlew cleanTest \
+	    training:test --tests "com.github.ked4ma.competitive.training.TestRunner"
+
+training-format:
+	./script/format.sh training code Code
+	@echo "[Info] Copied to Clipboard."
+
 test:
 	./gradlew common:test
 
-.PHONY: clean init run format finish check-vars problems problems-format test
+.PHONY: clean init run format finish check-vars training training-format test

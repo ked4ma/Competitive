@@ -1,9 +1,6 @@
 package com.github.ked4ma.competitive.test.client
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
-import io.ktor.client.plugins.cookies.HttpCookies
-import io.ktor.client.plugins.cookies.cookies
+import com.github.ked4ma.competitive.test.Platform
 import io.ktor.client.request.forms.submitForm
 import io.ktor.client.request.get
 import io.ktor.client.request.url
@@ -12,12 +9,7 @@ import io.ktor.http.Url
 import io.ktor.http.parameters
 import org.jsoup.Jsoup
 
-class AtCoderClient : TaskClient {
-    private val baseUrl = "https://atcoder.jp"
-
-    private val client = HttpClient(CIO) {
-        install(HttpCookies)
-    }
+class AtCoderClient : BaseTaskClient(Platform.ATCODER) {
 
     override suspend fun login(username: String, password: String) {
         val url = "$baseUrl/login"
@@ -34,9 +26,9 @@ class AtCoderClient : TaskClient {
                 append("password", password)
             }
         )
-    }
 
-    override suspend fun sessionCookie() = client.cookies(baseUrl).firstOrNull { it.name == "REVEL_SESSION" }
+        saveSession(sessionCookie())
+    }
 
     override suspend fun getTaskUrl(contest: String, task: String): Url {
         val html = client.get { url("$baseUrl/contests/$contest/tasks?lang=ja") }.bodyAsText()

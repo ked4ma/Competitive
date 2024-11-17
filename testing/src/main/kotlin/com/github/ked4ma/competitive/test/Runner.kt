@@ -8,19 +8,41 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.PipedInputStream
 import java.io.PipedOutputStream
+import java.lang.reflect.Method
 
-class Runner(
-    platform: Platform,
-    basePackage: String,
-    private val contestDir: String,
+class Runner {
+    private val client: TaskClient
+    private val method: Method
+    private val contestDir: String
     private val task: String
-) {
-    private val client = TaskClient.instanceOf(platform)
-    private val method = Class.forName("$basePackage.$contestDir.${task}Kt").getMethod("main")
-        ?: throw RuntimeException("target method is not found ($contestDir/$task)")
+
+    constructor(
+        platform: Platform,
+        basePackage: String,
+        contestDir: String,
+        task: String
+    ) {
+        client = TaskClient.instanceOf(platform)
+        method = Class.forName("$basePackage.$contestDir.${task}Kt").getMethod("main")
+            ?: throw RuntimeException("target method is not found ($contestDir/$task)")
+        this.contestDir = contestDir
+        this.task = task
+    }
+
+    constructor(
+        platform: Platform,
+        contestDir: String,
+        task: String,
+        method: Method?
+    ) {
+        client = TaskClient.instanceOf(platform)
+        this.method = method ?: throw RuntimeException("target method is not found ($contestDir/$task)")
+        this.contestDir = contestDir
+        this.task = task
+    }
 
     suspend fun setup() {
-        if (!contestDir.endsWith("_na")) {
+        if (!contestDir.endsWith("_na") && client.sessionCookie() == null) {
             withContext(Dispatchers.IO) {
                 val user = System.getenv("USER")
                 val password = System.getenv("PASSWORD")

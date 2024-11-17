@@ -1,9 +1,10 @@
 package com.github.ked4ma.competitive.test.client
 
+import com.github.ked4ma.competitive.test.Platform
 import io.ktor.http.Cookie
 import io.ktor.http.Url
 
-class CodeforcesClient : TaskClient {
+class CodeforcesClient : BaseTaskClient(Platform.CODECORCES) {
     override suspend fun login(username: String, password: String) {
         TODO("Not yet implemented")
     }

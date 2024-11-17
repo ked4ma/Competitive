@@ -2,25 +2,14 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    alias(libs.plugins.kotlinCodeforcesGradlePlugin)
+    alias(libs.plugins.kotlinCommonGradlePlugin)
 }
 
-group = "com.github.ked4ma.competitive.codeforces"
+group = "com.github.ked4ma.competitive.training"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-}
-
-sourceSets {
-    if (hasProperty("contest")) {
-        println("src/main/kotlin/com/github/ked4ma/competitive/codeforces/${findProperty("contest")}")
-        getByName("main").kotlin.setSrcDirs(
-            setOf(
-                "src/main/kotlin/com/github/ked4ma/competitive/codeforces/${findProperty("contest")}",
-            )
-        )
-    }
 }
 
 dependencies {
@@ -40,11 +29,8 @@ tasks.test {
         showStackTraces = true
         showExceptions = true
     }
-
-    systemProperty("task", System.getProperty("task"))
-    systemProperty("branch", System.getProperty("branch"))
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
