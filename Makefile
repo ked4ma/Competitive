@@ -45,7 +45,7 @@ endif
 	elif [ -d $(PLATFORM)/src/main/kotlin/com/github/ked4ma/competitive/$(PLATFORM)/$(CONTEST_BRANCH) ]; then \
 	    echo "[INFO] $(CONTEST_BRANCH) is already finished."; \
 	else \
-	    echo "[Info] preparing for the $(PLATFORM) contest ($(CONTEST))"; \
+	    echo "[INFO] preparing for the $(PLATFORM) contest ($(CONTEST))"; \
 	    # git stash; \
 	    git switch -c contest/$(PLATFORM)/$(CONTEST_BRANCH); \
 	    mkdir -p $(PLATFORM)/src/main/kotlin/com/github/ked4ma/competitive/$(PLATFORM)/$(CONTEST_BRANCH); \
@@ -57,12 +57,12 @@ run:
 	        $(PLATFORM):test --tests "com.github.ked4ma.competitive.$(PLATFORM).TestRunner" -Dtask=$(TASK_FILENAME) -Dbranch=$(BRANCH)
 
 format:
-	@echo "[Info] Format for submitting $(CONTEST)/$(TASK) ($(PLATFORM))."
+	@echo "[INFO] Format for submitting $(CONTEST)/$(TASK) ($(PLATFORM))."
 	./script/format.sh $(PLATFORM) $(CONTEST_BRANCH) $(TASK_FILENAME)
-	@echo "[Info] Copied to Clipboard."
+	@echo "[INFO] Copied to Clipboard."
 
 finish:
-	@echo "[Info] Finish $(PLATFORM) $(CONTEST_BRANCH)"
+	@echo "[INFO] Finish $(PLATFORM) $(CONTEST_BRANCH)"
 	git commit -a -m "$(PLATFORM) $(CONTEST_BRANCH)"
 	git switch main
 	git merge --no-ff $(BRANCH)
@@ -74,12 +74,12 @@ clean:
 	./gradlew clean
 
 training:
-	./gradlew cleanTest \
+	@./gradlew cleanTest \
 	    training:test --tests "com.github.ked4ma.competitive.training.TestRunner"
 
 training-format:
 	./script/format.sh training code Code
-	@echo "[Info] Copied to Clipboard."
+	@echo "[INFO] Copied to Clipboard."
 
 test:
 	./gradlew common:test
