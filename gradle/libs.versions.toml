@@ -9,6 +9,7 @@ kotlinxCoroutines = "1.8.0"
 ktor = "3.0.1"
 jsoup = "1.18.1"
 serialization = "1.7.3"
+slf4jSimple = "2.0.9"
 
 [libraries]
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
@@ -17,6 +18,7 @@ kotlinxSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serializati
 ktorClientCore = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktorClientCio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
+slf4jSimple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jSimple" }
 
 [plugins]
 kotlinCommonGradlePlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinCommon" }
@@ -28,5 +30,6 @@ testing = [
     "junitJupiter",
     "kotlinxCoroutinesCore",
     "ktorClientCore",
-    "ktorClientCio"
+    "ktorClientCio",
+    "slf4jSimple"
 ]

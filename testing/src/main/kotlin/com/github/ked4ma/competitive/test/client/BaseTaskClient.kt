@@ -30,6 +30,7 @@ abstract class BaseTaskClient(private val platform: Platform) : TaskClient {
 
     @OptIn(ExperimentalSerializationApi::class)
     private fun loadSession(): Cookie? {
+        println("[INFO] load session")
         val file = File("../session-${platform.name.lowercase()}.json")
         if (!file.exists()) return null
         val cookie = Json.decodeFromStream<Cookie>(file.inputStream())
@@ -43,6 +44,7 @@ abstract class BaseTaskClient(private val platform: Platform) : TaskClient {
     @OptIn(ExperimentalSerializationApi::class)
     protected fun saveSession(cookie: Cookie?) {
         if (cookie == null) return
+        println("[INFO] save session data for next run")
         val file = File("../session-${platform.name.lowercase()}.json")
         Json.encodeToStream(cookie, file.outputStream())
     }

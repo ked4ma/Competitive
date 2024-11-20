@@ -43,6 +43,7 @@ class Runner {
 
     suspend fun setup() {
         if (!contestDir.endsWith("_na") && client.sessionCookie() == null) {
+            println("[INFO] update session")
             withContext(Dispatchers.IO) {
                 val user = System.getenv("USER")
                 val password = System.getenv("PASSWORD")
