@@ -1,6 +1,7 @@
 package com.github.ked4ma.competitive.test.client
 
 import com.github.ked4ma.competitive.test.Platform
+import io.ktor.client.plugins.cookies.cookies
 import io.ktor.client.request.forms.submitForm
 import io.ktor.client.request.get
 import io.ktor.client.request.url
@@ -29,6 +30,8 @@ class AtCoderClient : BaseTaskClient(Platform.ATCODER) {
 
         saveSession(sessionCookie())
     }
+
+    override suspend fun sessionCookie() = client.cookies(baseUrl).firstOrNull { it.name == "REVEL_SESSION" }
 
     override suspend fun getTaskUrl(contest: String, task: String): Url {
         val html = client.get { url("$baseUrl/contests/$contest/tasks?lang=ja") }.bodyAsText()
@@ -59,9 +62,5 @@ class AtCoderClient : BaseTaskClient(Platform.ATCODER) {
             }.chunked(2) {
                 it[0] to it[1]
             }
-    }
-
-    override fun close() {
-        client.close()
     }
 }

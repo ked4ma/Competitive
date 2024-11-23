@@ -3,9 +3,9 @@ package com.github.ked4ma.competitive.test.client
 import com.github.ked4ma.competitive.test.Platform
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
+import io.ktor.client.plugins.UserAgent
 import io.ktor.client.plugins.cookies.ConstantCookiesStorage
 import io.ktor.client.plugins.cookies.HttpCookies
-import io.ktor.client.plugins.cookies.cookies
 import io.ktor.http.Cookie
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
@@ -24,9 +24,11 @@ abstract class BaseTaskClient(private val platform: Platform) : TaskClient {
                 storage = ConstantCookiesStorage(cookie)
             }
         }
+        install(UserAgent) {
+            agent =
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+        }
     }
-
-    override suspend fun sessionCookie() = client.cookies(baseUrl).firstOrNull { it.name == "REVEL_SESSION" }
 
     @OptIn(ExperimentalSerializationApi::class)
     private fun loadSession(): Cookie? {
@@ -47,5 +49,9 @@ abstract class BaseTaskClient(private val platform: Platform) : TaskClient {
         println("[INFO] save session data for next run")
         val file = File("../session-${platform.name.lowercase()}.json")
         Json.encodeToStream(cookie, file.outputStream())
+    }
+
+    override fun close() {
+        client.close()
     }
 }

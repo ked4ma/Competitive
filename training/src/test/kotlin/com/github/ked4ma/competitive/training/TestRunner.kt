@@ -56,7 +56,7 @@ class TestRunner {
 
             println("$platform: $contest/$task")
             RUNNER = Runner(
-                platform = Platform.ATCODER,
+                platform = platform,
                 contestDir = contest,
                 task = task,
                 method = method,

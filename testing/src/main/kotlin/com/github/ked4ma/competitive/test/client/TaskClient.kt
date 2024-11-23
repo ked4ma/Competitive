@@ -13,7 +13,7 @@ interface TaskClient: AutoCloseable {
     companion object {
         fun instanceOf(platform: Platform) = when (platform) {
             Platform.ATCODER -> AtCoderClient()
-            Platform.CODECORCES -> CodeforcesClient()
+            Platform.CODEFORCES -> CodeforcesClient()
         }
     }
 }
