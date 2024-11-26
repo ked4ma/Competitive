@@ -5,8 +5,8 @@ import com.github.ked4ma.competitive.common.models.tree.fenwick.*
 
 // calc inversion count of List
 // https://scrapbox.io/pocala-kyopro/%E8%BB%A2%E5%80%92%E6%95%B0
-fun List<Int>.inversionCount(): Long {
-    val data = this.compress()
+fun List<Int>.inversionCount(compress: Boolean = true): Long {
+    val data = if (compress) this.compress() else this
     var count = 0L
     val ft = FenwickTree(data.toSet().size)
     for (n in data) {
