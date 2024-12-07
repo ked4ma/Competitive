@@ -27,7 +27,13 @@ class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
     }
 
     val roots: List<Int>
-        get() = (r.indices).map { find(it) }
+        get() = r.indices.map { find(it) }
+    val uniqueRoots: Set<Int>
+        get() = buildSet {
+            r.indices.forEach {
+                add(find(it))
+            }
+        }
 
     fun unite(x: Int, y: Int) {
         var rx = find(x)
@@ -41,8 +47,7 @@ class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
     }
 
     fun size(x: Int) = -r[find(x)]
-    val categories: List<Int>
-        get() = r.indices.map { find(it) }
+    fun size() = uniqueRoots.size
 
     fun same(x: Int, y: Int) = find(x) == find(y)
 
