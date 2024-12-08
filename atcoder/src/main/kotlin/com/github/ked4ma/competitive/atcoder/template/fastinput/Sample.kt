@@ -12,21 +12,21 @@ fun main() {
 
 // # Utils
 // ## Input
-fun next() = readln()
-fun nextInt() = next().toInt()
-fun nextLong() = next().toLong()
-fun nextDouble() = next().toDouble()
-fun nextList() = next().split(" ")
-fun nextIntList() = next().split(" ").map(String::toInt)
-fun nextLongList() = next().split(" ").map(String::toLong)
-fun nextDoubleList() = next().split(" ").map(String::toDouble)
+private fun next() = readln()
+private fun nextInt() = next().toInt()
+private fun nextLong() = next().toLong()
+private fun nextDouble() = next().toDouble()
+private fun nextList() = next().split(" ")
+private fun nextIntList() = next().split(" ").map(String::toInt)
+private fun nextLongList() = next().split(" ").map(String::toLong)
+private fun nextDoubleList() = next().split(" ").map(String::toDouble)
 
 // ## Array
-inline fun <reified T> sizedArray(size: Int, default: T) = Array(size) { default }
+private inline fun <reified T> sizedArray(size: Int, default: T) = Array(size) { default }
 
 // faster input
 // [ref] https://qiita.com/p_shiki37/items/a0f6aac33bf60f5f65e4
-internal class FastScanner {
+private class FastScanner {
     private val `in` = System.`in`
     private val buffer = ByteArray(1024)
     private var ptr = 0
