@@ -1,11 +1,11 @@
 package com.github.ked4ma.competitive.common.array.permutation
 
-/**
- * calc next permutation of array.
- * CAUTION: this method will break array.
- *
- * @return true if there is next permutation. otherwise return false
- */
+
+// calc next permutation of array.
+// CAUTION1: this method will break array.
+// CAUTION2: be sure that array is sorted at first.
+//
+// @return true if there is next permutation. otherwise return false
 fun IntArray.nextPermutation(): Boolean {
     val n = this.size
     if (n == 1) return false

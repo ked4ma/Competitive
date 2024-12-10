@@ -5,10 +5,9 @@ class CumulativeSum2D {
     private val w: Int
     val data: Array<LongArray>
 
-    /**
-     * NOTE: only use for one time initialization.
-     * If need to recreate several time, use set and build func.
-     */
+
+    // NOTE: only use for one time initialization.
+    // If need to recreate several time, use set and build func.
     constructor(arr: Array<Array<out Number>>) {
         h = arr.size
         w = arr.first().size
