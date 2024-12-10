@@ -17,10 +17,9 @@ class FenwickTree(private val size: Int) {
         }
     }
 
-    /**
-     * sum of [0, r)
-     * @param right (exclusive)
-     */
+
+    // sum of [0, r)
+    // @param right (exclusive)
     private fun sum(right: Int): Long {
         var ans = 0L
         var r = right

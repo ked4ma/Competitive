@@ -27,11 +27,9 @@ fun extGcd(a: Long, b: Long): Triple<Long, Long, Long> {
 }
 
 // crt
-/**
- * calc crt(Chinese Remainder Theorem) with extGcd.
- * solve [x≡b1(mod. m1), x≡b2(mod. m2),...] -> x≡r(mod. m)
- * @return r(mod. m)
- */
+// calc crt(Chinese Remainder Theorem) with extGcd.
+// solve [x≡b1(mod. m1), x≡b2(mod. m2),...] -> x≡r(mod. m)
+// @return r(mod. m)
 fun crt(b: List<Long>, m: List<Long>): Pair<Long, Long> {
     var r = 0L
     var M = 1L

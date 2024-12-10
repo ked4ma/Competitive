@@ -2,11 +2,10 @@ package com.github.ked4ma.competitive.common.models.unionfind
 
 import com.github.ked4ma.competitive.common.array.int.d1.*
 
-/**
- * UnionFind
- * @param size num of elements
- * @param unionBySize enable "union-by-size" (default: true)
- */
+
+// UnionFind
+// @param size num of elements
+// @param unionBySize enable "union-by-size" (default: true)
 class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
     private val r = sizedIntArray(size) { -1 }
 
