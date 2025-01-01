@@ -3,7 +3,9 @@ package com.github.ked4ma.competitive.common.math.mod
 import com.github.ked4ma.competitive.common.math.modinv.*
 
 // mod
-const val MOD = 1_000_000_007L
+const val MOD10e9_7 = 1_000_000_007L
+const val MOD998244353 = 998_244_353L
+const val MOD = MOD10e9_7
 fun Long.plusMod(n: Long, mod: Long = MOD) = this.plus(n, mod)
 fun Long.minusMod(n: Long, mod: Long = MOD) = this.minus(n, mod)
 fun Long.timesMod(n: Long, mod: Long = MOD) = this.times(n, mod)
