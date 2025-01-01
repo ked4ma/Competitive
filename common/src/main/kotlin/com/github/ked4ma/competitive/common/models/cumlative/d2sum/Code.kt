@@ -30,6 +30,17 @@ class CumulativeSum2D {
         }
     }
 
+    constructor(list: List<List<Number>>) {
+        h = list.size
+        w = list.first().size
+        data = Array(h + 1) { LongArray(w + 1) { 0L } }
+        for (i in 0 until h) {
+            for (j in 0 until w) {
+                data[i + 1][j + 1] = data[i][j + 1] + data[i + 1][j] - data[i][j] + list[i][j].toLong()
+            }
+        }
+    }
+
     constructor(h: Int, w: Int) {
         this.h = h
         this.w = w

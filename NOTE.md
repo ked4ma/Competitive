@@ -24,3 +24,10 @@
       }
   }
   ```
+
+## tree's centroid
+- https://atcoder.jp/contests/abc291/editorial/5840
+- https://atcoder.jp/contests/abc348/editorial/9706
+
+## Rerooting DP
+- https://ei1333.hateblo.jp/entry/2017/04/10/224413
