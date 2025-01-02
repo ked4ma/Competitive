@@ -1,4 +1,4 @@
-package com.github.ked4ma.competitive.common.array.permutation
+package com.github.ked4ma.competitive.common.array.permutation.char
 
 
 // calc next permutation of array.
