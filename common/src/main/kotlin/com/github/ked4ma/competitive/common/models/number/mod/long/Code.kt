@@ -22,6 +22,11 @@ data class ModLong(private val value: Long, val mod: Long = MOD) : Number(), Com
     operator fun times(n: Long): ModLong = ((value * n) % mod).toModLong(mod)
     operator fun div(n: Long): ModLong = (value * modinv(n, mod) % mod).toModLong(mod)
 
+    operator fun plus(n: Int): ModLong = plus(n.toLong())
+    operator fun minus(n: Int): ModLong = minus(n.toLong())
+    operator fun times(n: Int): ModLong = times(n.toLong())
+    operator fun div(n: Int): ModLong = div(n.toLong())
+
     private fun modinv(num: Long, mod: Long): Long {
         var a = num
         var b = mod
