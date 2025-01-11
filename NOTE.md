@@ -10,17 +10,17 @@
 ## rotate 2D-matrix
 - clockwise
   ```kotlin
-  for (i in 0 until N) {
-      for (j in 0 until N) {
-          arr[j][N - 1 - i] = arr[i][j]
+  for (i in 0 until H) {
+      for (j in 0 until W) {
+          arr2[j][H - 1 - i] = arr[i][j]
       }
   }
   ```
 - anti-clockwise
   ```kotlin
-  for (j in 0 until N) {
-      for (j in 0 until N) {
-          arr[N - 1 - j][i] = arr[i][j]
+  for (j in 0 until H) {
+      for (j in 0 until W) {
+          arr2[H - 1 - j][i] = arr[i][j]
       }
   }
   ```
