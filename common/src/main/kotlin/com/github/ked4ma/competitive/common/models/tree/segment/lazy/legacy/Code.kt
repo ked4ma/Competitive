@@ -1,4 +1,4 @@
-package com.github.ked4ma.competitive.common.models.tree.segment.lazy
+package com.github.ked4ma.competitive.common.models.tree.segment.lazy.legacy
 
 import com.github.ked4ma.competitive.common.models.tree.segment.type.*
 import kotlin.math.max

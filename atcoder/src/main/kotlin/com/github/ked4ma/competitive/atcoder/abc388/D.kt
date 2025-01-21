@@ -1,7 +1,7 @@
 package com.github.ked4ma.competitive.atcoder.abc388
 
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.lazy.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.legacy.*
 import com.github.ked4ma.competitive.common.repeat.*
 import kotlin.math.min
 

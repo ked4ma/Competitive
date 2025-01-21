@@ -1,5 +1,11 @@
-package com.github.ked4ma.competitive.common.models.tree.segment.lazy
+package com.github.ked4ma.competitive.common.models.tree.segment.lazy.long
 
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.raq.max.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.raq.min.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.raq.sum.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.ruq.max.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.ruq.min.*
+import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.ruq.sum.*
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -88,7 +94,6 @@ class LazySegmentTreeTest {
         assertEquals(28L, segTree.query(5, 8))
     }
 
-
     @Test
     fun test_RAQ_RMQ() { // add + max(query)
         val segTree = LazySegmentTree.RAQ_RMQ(data.size)
@@ -169,5 +174,34 @@ class LazySegmentTreeTest {
         assertEquals(17L, segTree.query(6, 7))
         assertEquals(8, segTree.query(7, 8))
         assertEquals(51L, segTree.query(5, 8))
+    }
+
+    @Test
+    fun test_maxRight() {
+        val segTree = LazySegmentTree.RAQ_RMQ(data.size)
+        segTree.init(data)
+        // 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+        //       ↑
+        assertEquals(3, segTree.maxRight(0) { it < 4 })
+
+        segTree.update(1, 2)
+        segTree.update(2, 1)
+        // 1,4,4,4,5,6,7,8,9,10,11,12,13,14,15,16
+        //         ↑
+        assertEquals(4, segTree.maxRight(0) { it < 5 })
+    }
+
+    @Test
+    fun test_minLeft() {
+        val segTree = LazySegmentTree.RAQ_RmQ(data.size)
+        segTree.init(data)
+        // 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
+        //                 ↑
+        assertEquals(8, segTree.minLeft(data.size) { it >= 9 })
+
+        segTree.update(7, 1)
+        // 1,2,3,4,5,6,7,9,9,10,11,12,13,14,15,16
+        //               ↑
+        assertEquals(7, segTree.minLeft(data.size) { it >= 9 })
     }
 }
