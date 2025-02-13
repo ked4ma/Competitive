@@ -5,7 +5,7 @@ import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.*
 fun LazySegmentTree.Companion.RUQ_RSQ(
     size: Int,
     ex: Long = 0,
-    em: Long = 0
+    em: Long = Long.MIN_VALUE
 ) = LazySegmentTree(
     n = size,
     fx = { x1, x2 -> x1 + x2 },
