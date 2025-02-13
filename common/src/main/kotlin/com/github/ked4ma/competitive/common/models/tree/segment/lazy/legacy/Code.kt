@@ -5,6 +5,13 @@ import kotlin.math.max
 import kotlin.math.min
 
 // ref : https://algo-logic.info/segment-tree/
+@Deprecated(
+    "This is Legacy implementation.",
+    ReplaceWith(
+        "LazySegmentTree",
+        "com.github.ked4ma.competitive.common.models.tree.segment.lazy.long"
+    )
+)
 class LazySegmentTree(
     n: Int,
     private val fx: FX,
