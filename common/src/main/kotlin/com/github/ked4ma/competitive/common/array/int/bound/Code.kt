@@ -1,6 +1,13 @@
 package com.github.ked4ma.competitive.common.array.int.bound
 
 // ref: https://webbibouroku.com/Blog/Article/cs-lowerbound-upperbound
+// A = [1, 1, 2, 3, 3, 4], v = 3
+//               ↑
+// returns index "3"
+// ==========
+// A = [1, 1, 3, 4, 4, 6], v = 2
+//            ↑
+// returns index "2"
 fun IntArray.lowerBound(v: Int): Int {
     var l = 0
     var r = this.lastIndex
@@ -16,6 +23,9 @@ fun IntArray.lowerBound(v: Int): Int {
 }
 
 // ref: https://webbibouroku.com/Blog/Article/cs-lowerbound-upperbound
+// A = [1, 1, 2, 3, 3, 4], v = 3
+//                     ↑
+// returns index "5"
 fun IntArray.upperBound(v: Int): Int {
     var l = 0
     var r = this.lastIndex
