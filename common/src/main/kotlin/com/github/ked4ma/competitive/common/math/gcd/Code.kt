@@ -15,13 +15,17 @@ fun gcd(x: Long, y: Long): Long {
     return if (x >= y) innerGcd(x, y) else innerGcd(y, x)
 }
 
+// return followings
+// - gcd of (a, b)
+// - (x, y) satisfy equation ax + by = gcd
+// return value = (gcd, x, y)
 fun extGcd(a: Long, b: Long): Triple<Long, Long, Long> {
-    fun logic(a: Long, b: Long, x: Long = 0L, y: Long = 0L): Triple<Long, Long, Long> {
+    fun logic(a: Long, b: Long): Triple<Long, Long, Long> {
         if (b == 0L) {
-            return Triple(1L, 0L, a)
+            return Triple(a, 1, 0)
         }
-        val (ny, nx, d) = logic(b, a % b, y, x)
-        return Triple(nx, ny - ((a / b) * nx), d)
+        val (g, x, y) = logic(b, a % b)
+        return Triple(g, y, x - (a / b) * y)
     }
     return logic(a, b)
 }
@@ -34,7 +38,7 @@ fun crt(b: List<Long>, m: List<Long>): Pair<Long, Long> {
     var r = 0L
     var M = 1L
     b.zip(m).forEach { (bi, mi) ->
-        val (p, _, d) = extGcd(M, mi)
+        val (d, p, _) = extGcd(M, mi)
         if ((bi - r) % d != 0L) return 0L to -1L
         val tmp = (bi - r) / d * p % (mi / d)
         r += M * tmp

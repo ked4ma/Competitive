@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 
-class SCCTest {
+class SCCGraphTest {
     @Test
     fun test_create_scc() {
         val (N, M) = 6 to 7
@@ -18,12 +18,12 @@ class SCCTest {
             4 to 2,
         )
 
-        val scc = SCC(N)
+        val sccGraph = SCCGraph(N)
         repeat(M) {
             val (U, V) = UV[it]
-            scc.addEdge(U, V)
+            sccGraph.addEdge(U, V)
         }
-        val groups = scc.scc()
+        val groups = sccGraph.scc()
 
         assertEquals(4, groups.size)
         assertContentEquals(
