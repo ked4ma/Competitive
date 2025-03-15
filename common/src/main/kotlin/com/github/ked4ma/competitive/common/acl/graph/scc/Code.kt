@@ -10,7 +10,7 @@ import kotlin.math.min
 // https://atcoder.github.io/ac-library/master/document_en/scc.html
 // https://atcoder.github.io/ac-library/master/document_ja/scc.html
 // tarjan's algorithm: https://qiita.com/AkariLuminous/items/a2c789cebdd098dcb503
-class SCC(val n: Int) {
+class SCCGraph(val n: Int) {
     data class Edge(val to: Int)
 
     private val edges = mutableListOf<Pair<Int, Edge>>()
