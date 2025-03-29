@@ -2,6 +2,9 @@ package com.github.ked4ma.competitive.common.set.multi
 
 import java.util.*
 
+// Provide Set that can have same values in it.
+// And values in this set is sorted by comparator.
+// So you can get min / max value by first / last (by default).
 class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) {
     private val map = TreeMap<T, Int>(comparator)
     private var _size = 0
