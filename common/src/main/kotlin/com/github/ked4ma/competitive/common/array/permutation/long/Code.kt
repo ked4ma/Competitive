@@ -1,4 +1,4 @@
-package com.github.ked4ma.competitive.common.array.permutation.int
+package com.github.ked4ma.competitive.common.array.permutation.long
 
 
 // calc next permutation of array.
@@ -6,7 +6,7 @@ package com.github.ked4ma.competitive.common.array.permutation.int
 // CAUTION2: be sure that array is sorted at first.
 //
 // @return true if there is next permutation. otherwise return false
-fun IntArray.nextPermutation(): Boolean {
+fun LongArray.nextPermutation(): Boolean {
     val n = this.size
     if (n == 1) return false
     var i = n - 2

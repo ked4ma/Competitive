@@ -1,4 +1,4 @@
-package com.github.ked4ma.competitive.common.models.tree.segment.lazy.general2
+package com.github.ked4ma.competitive.common.models.tree.segment.lazy.legacy.general2
 
 import com.github.ked4ma.competitive.common.array.wrap.*
 import com.github.ked4ma.competitive.common.array.wrap.d1.*
