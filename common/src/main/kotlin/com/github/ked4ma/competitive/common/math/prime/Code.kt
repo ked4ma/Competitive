@@ -11,7 +11,7 @@ fun primes(max: Int) = buildList {
     for (i in 2..max) {
         if (arr[i]) continue
         add(i.toLong())
-        for (j in i until max step i) {
+        for (j in i..max step i) {
             arr[j] = true
         }
     }
