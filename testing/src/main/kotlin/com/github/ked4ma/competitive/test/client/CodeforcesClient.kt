@@ -9,11 +9,12 @@ import org.jsoup.Jsoup
 
 class CodeforcesClient : BaseTaskClient(Platform.CODEFORCES) {
     override suspend fun login(username: String, password: String) {
-        TODO("Not yet implemented")
+        // ("Not yet implemented")
     }
 
     override suspend fun sessionCookie(): Cookie? {
-        TODO("Not yet implemented")
+        // ("Not yet implemented")
+        return null
     }
 
     override suspend fun getTaskUrl(contest: String, task: String): Url {
