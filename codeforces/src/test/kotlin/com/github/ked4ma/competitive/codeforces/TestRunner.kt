@@ -38,7 +38,7 @@ class TestRunner {
             println("$branch, $task")
             println(contestDir)
             RUNNER = Runner(
-                platform = Platform.ATCODER,
+                platform = Platform.CODEFORCES,
                 basePackage = "com.github.ked4ma.competitive.codeforces",
                 contestDir = contestDir,
                 task = task
@@ -60,7 +60,7 @@ class TestRunner {
 //                    """
 //                    """.trimIndent(),
 //                    """
-//                    """.trimIndent()
+//                    """.trimIndent(),
 //                ),
 //            )
         }
