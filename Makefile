@@ -65,6 +65,7 @@ format:
 
 finish:
 	@echo "[INFO] Finish $(PLATFORM) $(CONTEST_BRANCH)"
+	git checkout training/src/main/kotlin/com/github/ked4ma/competitive/training/code/Code.kt
 	git commit -a -m "$(PLATFORM) $(CONTEST_BRANCH)"
 	git switch main
 	git merge --no-ff $(BRANCH)
