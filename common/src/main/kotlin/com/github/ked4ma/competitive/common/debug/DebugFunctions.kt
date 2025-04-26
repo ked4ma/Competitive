@@ -1,7 +1,5 @@
 package com.github.ked4ma.competitive.common.debug
 
-import java.util.*
-
 // Debug Functions
 // set "_debug_" prefix for delete this output for submit.
 
@@ -9,47 +7,51 @@ import java.util.*
 @Suppress("FunctionName")
 fun _debug_print(data: Any) = print("[DEBUG] $data")
 
-@Suppress("FunctionName", "UNCHECKED_CAST")
-fun _debug_println(data: Any, padding: Int? = null) {
-    when {
-        data is Array<*> && data.isArrayOf<Array<out Number>>() -> {
-            val p = (data as Array<Array<out Number>>).maxOf { row ->
-                row.maxOf { it.toString().length }
-            }
-            _debug_println("=== 2D Array ==========")
-            data.forEach {
-                _debug_println(it, p)
-            }
-            _debug_println("=======================")
-        }
-
-        data is Array<*> && data.isArrayOf<Number>() -> {
-            val str = if (padding == null) {
-                data.joinToString(", ")
+@Suppress("FunctionName")
+fun _debug_println(data: Any) {
+    when (data) {
+        is Array<*> -> {
+            if (data.isNotEmpty() && isIterable(data[0]!!)) {
+                data.forEach {
+                    _debug_println(it!!)
+                }
             } else {
-                StringJoiner(", ").apply {
-                    (data as Array<out Number>).forEach { d ->
-                        add("%${padding}s".format(d.toString()))
-                    }
-                }.toString()
+                _debug_println(data.joinToString(" "))
             }
-            _debug_println(str)
         }
 
-        else -> println("[DEBUG] $data")
+        is List<*> -> {
+            if (data.isNotEmpty() && isIterable(data[0]!!)) {
+                data.forEach { _debug_println(it!!) }
+            } else {
+                _debug_println(data.joinToString(" "))
+            }
+        }
+
+        is ByteArray -> _debug_println(data.joinToString(" "))
+        is CharArray -> _debug_println(data.joinToString(" "))
+        is ShortArray -> _debug_println(data.joinToString(" "))
+        is IntArray -> _debug_println(data.joinToString(" "))
+        is LongArray -> _debug_println(data.joinToString(" "))
+        is FloatArray -> _debug_println(data.joinToString(" "))
+        is DoubleArray -> _debug_println(data.joinToString(" "))
+        is BooleanArray -> _debug_println(data.joinToString(" "))
+        else -> data.toString().split("\n").forEach { println("[DEBUG] $it") }
     }
 }
+
+@Suppress("FunctionName")
+fun _debug_println(show: Boolean, value: () -> Any) {
+    if (!show) return
+    _debug_println(value())
+}
+
+private fun isIterable(data: Any) =
+    data is Array<*> || data is List<*> ||
+            data is ByteArray || data is CharArray ||
+            data is ShortArray || data is IntArray || data is LongArray ||
+            data is FloatArray || data is DoubleArray ||
+            data is BooleanArray
 
 @Suppress("FunctionName")
 fun _debug_require(value: Boolean, lazyMessage: () -> Any) = require(value, lazyMessage)
-
-@Suppress("FunctionName")
-fun _debug_to_bit(n: Long): CharSequence {
-    var m = n
-    val sb = StringBuilder()
-    while (m > 0) {
-        sb.append(if (m % 2 == 1L) '1' else '0')
-        m = m shr 1
-    }
-    return sb.reversed()
-}
