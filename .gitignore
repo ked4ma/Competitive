@@ -46,3 +46,6 @@ out/
 
 secret-*.conf
 session-*.json
+
+### aider ###
+.aider*
