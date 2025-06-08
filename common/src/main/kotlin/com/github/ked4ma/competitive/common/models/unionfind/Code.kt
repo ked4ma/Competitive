@@ -7,22 +7,25 @@ import com.github.ked4ma.competitive.common.array.int.d1.*
 // @param size num of elements
 // @param unionBySize enable "union-by-size" (default: true)
 class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
-    private val r = sizedIntArray(size) { -1 }
+    private val r = sizedIntArray(size, -1)
 
     // find root
     fun find(x: Int): Int {
         if (r[x] < 0) return x
         // route compression
-        val comp = mutableListOf<Int>()
-        var i = x
-        while (r[i] >= 0) {
-            comp.add(i)
-            i = r[i]
-        }
-        for (j in comp) {
-            r[j] = i
-        }
-        return i
+//        val comp = mutableListOf<Int>()
+//        var i = x
+//        while (r[i] >= 0) {
+//            comp.add(i)
+//            i = r[i]
+//        }
+//        for (j in comp) {
+//            r[j] = i
+//        }
+//        return i
+        val res = find(r[x])
+        r[x] = res
+        return res
     }
 
     val roots: List<Int>
@@ -39,7 +42,11 @@ class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
         var ry = find(y)
         if (rx == ry) return
         if (unionBySize && r[rx] > r[ry]) {
-            rx = ry.also { ry = rx }
+            val tmp = rx
+            rx = ry
+            ry = tmp
+            // following code affect to performance
+            // rx = ry.also { ry = rx }
         }
         r[rx] += r[ry]
         r[ry] = rx
