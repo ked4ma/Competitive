@@ -14,7 +14,7 @@ fun main() {
     }
 }
 
-fun solve() {
+private fun solve() {
     val N = nextInt()
     val S = nextCharArray()
     val dp = sizedIntArray(3, INT_INF)

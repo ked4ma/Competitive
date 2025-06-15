@@ -13,7 +13,7 @@ fun main() {
     }
 }
 
-fun solve() {
+private fun solve() {
     val MOD = MOD998244353
     val (N, K) = nextLongList().let { (N, K) -> N.toString(2) to K.toInt() }
     val M = N.length

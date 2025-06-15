@@ -13,7 +13,7 @@ fun main() {
     }
 }
 
-fun solve() {
+private fun solve() {
     val N = nextInt()
     val A = nextIntList()
     val ng = mutableSetOf<Int>()
