@@ -13,7 +13,7 @@ fun main() {
     println(solve(N, S, T))
 }
 
-fun solve(N: Int, S: String, T: String): Int {
+private fun solve(N: Int, S: String, T: String): Int {
     if (S == T) return 0
     if (T.toSet().size == 26) return -1
     val edges = buildSet {

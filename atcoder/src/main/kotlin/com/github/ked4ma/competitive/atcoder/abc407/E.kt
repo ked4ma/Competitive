@@ -13,7 +13,7 @@ fun main() {
     println(ans.joinToString("\n"))
 }
 
-fun solve(): Long {
+private fun solve(): Long {
     val N = nextInt()
     val q = PriorityQueue<Long>(reverseOrder())
     var i = 0
