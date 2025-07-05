@@ -8,7 +8,7 @@ import io.ktor.http.Url
 import org.jsoup.Jsoup
 
 class CodeforcesClient : BaseTaskClient(Platform.CODEFORCES) {
-    override suspend fun login(username: String, password: String) {
+    override suspend fun login(username: String, password: String, rawCookieString: String?) {
         // ("Not yet implemented")
     }
 

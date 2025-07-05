@@ -47,7 +47,8 @@ class Runner {
             withContext(Dispatchers.IO) {
                 val user = System.getenv("USER")
                 val password = System.getenv("PASSWORD")
-                client.login(user, password)
+                val rawCookieString = System.getenv("RAW_COOKIE")
+                client.login(user, password, rawCookieString)
             }
         }
     }

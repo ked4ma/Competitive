@@ -5,7 +5,7 @@ import io.ktor.http.Cookie
 import io.ktor.http.Url
 
 interface TaskClient: AutoCloseable {
-    suspend fun login(username: String, password: String)
+    suspend fun login(username: String, password: String, rawCookieString: String?)
     suspend fun sessionCookie(): Cookie?
     suspend fun getTaskUrl(contest: String, task: String): Url
     suspend fun retrieveExamples(url: Url): List<Pair<String, String>>
