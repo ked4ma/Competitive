@@ -4,9 +4,12 @@ import com.github.ked4ma.competitive.test.Platform
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.UserAgent
-import io.ktor.client.plugins.cookies.ConstantCookiesStorage
+import io.ktor.client.plugins.cookies.AcceptAllCookiesStorage
+import io.ktor.client.plugins.cookies.CookiesStorage
 import io.ktor.client.plugins.cookies.HttpCookies
+import io.ktor.client.plugins.cookies.addCookie
 import io.ktor.http.Cookie
+import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
@@ -15,14 +18,16 @@ import java.io.File
 
 abstract class BaseTaskClient(private val platform: Platform) : TaskClient {
     protected val baseUrl = platform.baseUrl
+    protected val cookiesStorage: CookiesStorage = AcceptAllCookiesStorage()
     protected val client = HttpClient(CIO) {
         val cookie = loadSession()
-        if (cookie == null) {
-            install(HttpCookies)
-        } else {
-            install(HttpCookies) {
-                storage = ConstantCookiesStorage(cookie)
+        if (cookie != null) {
+            runBlocking {
+                cookiesStorage.addCookie(platform.baseUrl, cookie)
             }
+        }
+        install(HttpCookies) {
+            storage = cookiesStorage
         }
         install(UserAgent) {
             agent =
