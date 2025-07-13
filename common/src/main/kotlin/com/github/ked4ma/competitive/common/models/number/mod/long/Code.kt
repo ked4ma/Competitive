@@ -2,7 +2,11 @@ package com.github.ked4ma.competitive.common.models.number.mod.long
 
 import com.github.ked4ma.competitive.common.math.mod.*
 
-data class ModLong(private val value: Long, val mod: Long = MOD) : Number(), Comparable<ModLong> {
+data class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Comparable<ModLong> {
+    init {
+        value = ((value % mod) + mod) % mod
+    }
+
     override fun toByte(): Byte = value.toByte()
     override fun toChar(): Char = value.toInt().toChar()
     override fun toDouble(): Double = value.toDouble()
@@ -12,20 +16,20 @@ data class ModLong(private val value: Long, val mod: Long = MOD) : Number(), Com
     override fun toShort(): Short = value.toShort()
     override fun compareTo(other: ModLong): Int = value.compareTo(other.value)
 
-    operator fun plus(n: ModLong): ModLong = this.plus(n.value)
-    operator fun minus(n: ModLong): ModLong = this.minus(n.value)
-    operator fun times(n: ModLong): ModLong = this.times(n.value)
-    operator fun div(n: ModLong): ModLong = this.div(n.value)
+    operator fun plus(n: ModLong): ModLong = (value + n.value).toModLong(mod)
+    operator fun minus(n: ModLong): ModLong = (value - n.value).toModLong(mod)
+    operator fun times(n: ModLong): ModLong = (value * n.value).toModLong(mod)
+    operator fun div(n: ModLong): ModLong = (value * modinv(n.value, mod)).toModLong(mod)
 
-    operator fun plus(n: Long): ModLong = ((value + n) % mod).toModLong(mod)
-    operator fun minus(n: Long): ModLong = ((value - n + mod) % mod).toModLong(mod)
-    operator fun times(n: Long): ModLong = ((value * n) % mod).toModLong(mod)
-    operator fun div(n: Long): ModLong = (value * modinv(n, mod) % mod).toModLong(mod)
+    operator fun plus(n: Long): ModLong = plus(n.toModLong(mod))
+    operator fun minus(n: Long): ModLong = minus(n.toModLong(mod))
+    operator fun times(n: Long): ModLong = times(n.toModLong(mod))
+    operator fun div(n: Long): ModLong = div(n.toModLong(mod))
 
-    operator fun plus(n: Int): ModLong = plus(n.toLong())
-    operator fun minus(n: Int): ModLong = minus(n.toLong())
-    operator fun times(n: Int): ModLong = times(n.toLong())
-    operator fun div(n: Int): ModLong = div(n.toLong())
+    operator fun plus(n: Int): ModLong = plus(n.toModLong(mod))
+    operator fun minus(n: Int): ModLong = minus(n.toModLong(mod))
+    operator fun times(n: Int): ModLong = times(n.toModLong(mod))
+    operator fun div(n: Int): ModLong = div(n.toModLong(mod))
 
     private fun modinv(num: Long, mod: Long): Long {
         var a = num
