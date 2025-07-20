@@ -9,6 +9,9 @@ import com.github.ked4ma.competitive.common.repeat.*
 
 // ref:  https://github.com/atcoder/ac-library/blob/master/atcoder/lazysegtree.hpp
 // ref2: https://atcoder.github.io/ac-library/production/document_ja/lazysegtree.html
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 class LazySegmentTree(
     n: Int,
     private val fx: FX,

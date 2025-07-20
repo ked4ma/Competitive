@@ -1,5 +1,8 @@
 package com.github.ked4ma.competitive.common.models.tree.segment.general
 
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 class GeneralSegmentTree<T>(
     private val n: Int,
     private val dat: Array<T>,

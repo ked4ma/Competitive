@@ -6,6 +6,9 @@ import com.github.ked4ma.competitive.common.array.wrap.d1.*
 // [CAUTION] NOT recommended to use Pair.
 //           Consider to use data class instead.
 // THIS is EXPERIMENTAL class
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 class GeneralLazySegmentTree2<X, M>(
     private val n: Int,
     private val dat: WrappedArray<X>,

@@ -4,6 +4,9 @@ import com.github.ked4ma.competitive.common.array.any.d1.*
 
 // [CAUTION] NOT recommended to use Pair.
 //           Consider to use data class instead.
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 class GeneralLazySegmentTree<X, M>(
     private val n: Int,
     private val dat: Array<X>,
