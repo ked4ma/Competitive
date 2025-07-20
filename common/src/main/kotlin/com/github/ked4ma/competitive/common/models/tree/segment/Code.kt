@@ -5,6 +5,9 @@ import kotlin.math.max
 import kotlin.math.min
 
 // https://algo-logic.info/segment-tree/
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 class SegmentTree(
     n: Int,
     private val fx: FX,

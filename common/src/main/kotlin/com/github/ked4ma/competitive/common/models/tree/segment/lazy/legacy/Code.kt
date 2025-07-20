@@ -5,6 +5,9 @@ import kotlin.math.max
 import kotlin.math.min
 
 // ref : https://algo-logic.info/segment-tree/
+// info:
+//   RUQ -> fm: {a, b -> b}
+//   RAQ -> fm: {a, b -> a + b}
 @Deprecated(
     "This is Legacy implementation.",
     ReplaceWith(
