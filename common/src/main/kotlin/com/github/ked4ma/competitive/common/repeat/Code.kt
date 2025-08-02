@@ -18,4 +18,5 @@ inline fun loop(times: Long, action: (Long) -> Unit) {
     }
 }
 
+@Deprecated("This method will affect to the performance.")
 fun range(n: Int) = 0 until n
