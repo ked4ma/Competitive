@@ -24,7 +24,7 @@ fun Long.powMod(n: Long, mod: Long): Long {
     _debug_require(n >= 0) { "n($n) must be greater than or equal to zero(0)." }
     var res = 1L
     var i = n
-    var m = this
+    var m = this.mod(mod)
     while (i > 0L) {
         if (i.bit(0)) {
             res = res.timesMod(m, mod)
