@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#mod",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -184,7 +185,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb3e9a92868ba06c",
+  "active": "12fe4e64250f52fe",
   "lastOpenFiles": [
     "Extra/Resources/Screenshot from 2025-09-28 17-43-51.png",
     "Knowledge/Pascal's triangle(パスカルの三角形).md",
