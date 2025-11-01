@@ -11,7 +11,7 @@ In this repo, we use Makefile to run code.
 
 ## For competition
 
-### Prepare
+### Preparation
 
 - You need to make `secret-<PLATFORM>.conf` to login when get problem examples during competitions.
     - e.g.) if you attend AtCoder competition, create `secret-atcoder.conf`

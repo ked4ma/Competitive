@@ -27,8 +27,6 @@ dependencies {
     implementation(project(":common"))
     testImplementation(project(":testing"))
     testImplementation(libs.bundles.testing)
-//    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-//    testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.test {
