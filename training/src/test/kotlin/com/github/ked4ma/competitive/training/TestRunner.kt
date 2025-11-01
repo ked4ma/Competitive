@@ -16,7 +16,7 @@ import java.io.PipedOutputStream
 import java.lang.reflect.Method
 
 class TestRunner {
-    @ParameterizedTest
+    @ParameterizedTest(name = "No.{index}")
     @MethodSource("sampleProvider")
     fun testEachSample(input: String, expected: String) = runBlocking {
         val actual = RUNNER.exec(input, expected)

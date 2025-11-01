@@ -1,18 +1,19 @@
 [versions]
-kotlinCommon = "1.8.20"
-kotlinAtcoder = "1.8.20"
-kotlinCodeforces = "1.9.21"
+kotlinCommon = "2.2.0"
+kotlinAtcoder = "2.2.10"
+kotlinCodeforces = "2.2.0"
 
 # test
-junit = "5.11.3"
-kotlinxCoroutines = "1.8.0"
-ktor = "3.0.1"
-jsoup = "1.18.1"
-serialization = "1.7.3"
-slf4jSimple = "2.0.9"
+junit = "6.0.0"
+kotlinxCoroutines = "1.10.2"
+ktor = "3.3.1"
+jsoup = "1.21.2"
+serialization = "1.9.0"
+slf4jSimple = "2.0.17"
 
 [libraries]
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
 kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinxSerializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
 ktorClientCore = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
@@ -28,6 +29,7 @@ kotlinCodeforcesGradlePlugin = { id = "org.jetbrains.kotlin.jvm", version.ref = 
 [bundles]
 testing = [
     "junitJupiter",
+    "junitPlatformLauncher",
     "kotlinxCoroutinesCore",
     "ktorClientCore",
     "ktorClientCio",

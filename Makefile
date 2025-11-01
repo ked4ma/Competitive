@@ -87,4 +87,9 @@ training-format:
 test:
 	./gradlew common:test
 
-.PHONY: clean init run format finish check-vars training training-format test
+checkForUpdate:
+	./gradlew dependencyUpdates \
+	    -Drevision=release \
+	    -DprocessProjectDependencies=true
+
+.PHONY: clean init run format finish check-vars training training-format test checkForUpdate
