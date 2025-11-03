@@ -5,7 +5,6 @@ import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.models.tree.segment.type.*
 import com.github.ked4ma.competitive.common.number.int.bit.*
 import com.github.ked4ma.competitive.common.number.int.bit.ceil.*
-import com.github.ked4ma.competitive.common.repeat.*
 
 // ref:  https://github.com/atcoder/ac-library/blob/master/atcoder/lazysegtree.hpp
 // ref2: https://atcoder.github.io/ac-library/production/document_ja/lazysegtree.html
@@ -36,12 +35,12 @@ class LazySegmentTree(
     }
 
     fun init(data: LongArray) {
-        for (i in range(_n)) dat[size + i] = data[i]
+        for (i in 0 until _n) dat[size + i] = data[i]
         for (i in size - 1 downTo 1) update(i)
     }
 
     fun set(i: Int, x: X) {
-        _debug_require(i in range(_n)) { "i($i) must be in 0 until $_n" }
+        _debug_require(i in 0 until _n) { "i($i) must be in 0 until $_n" }
         val idx = i + size
         for (k in log downTo 1) push(idx shr k, k)
         dat[idx] = x
@@ -49,7 +48,7 @@ class LazySegmentTree(
     }
 
     fun get(i: Int): X {
-        _debug_require(i in range(_n)) { "i($i) must be in 0 until $_n" }
+        _debug_require(i in 0 until _n) { "i($i) must be in 0 until $_n" }
         val idx = i + size
         for (k in log downTo 1) push(idx shr k, k)
         return dat[idx]
@@ -82,7 +81,7 @@ class LazySegmentTree(
     fun queryAll(): X = dat[1]
 
     fun update(i: Int, m: M) {
-        _debug_require(i in range(_n)) { "i($i) must be in 0 until $_n" }
+        _debug_require(i in 0 until _n) { "i($i) must be in 0 until $_n" }
         val idx = i + size
         for (k in log downTo 1) push(idx shr k, k)
         dat[idx] = fa(dat[idx], m)

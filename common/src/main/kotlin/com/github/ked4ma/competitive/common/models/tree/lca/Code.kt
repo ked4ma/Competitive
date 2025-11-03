@@ -4,7 +4,6 @@ import com.github.ked4ma.competitive.common.array.any.d1.*
 import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.array.int.d2.*
 import com.github.ked4ma.competitive.common.number.int.bit.*
-import com.github.ked4ma.competitive.common.repeat.*
 import java.util.*
 import kotlin.math.log2
 
@@ -35,7 +34,7 @@ class LCATree(private val N: Int) {
             }
         }
         for (k in 1 until height) {
-            for (i in range(N)) {
+            for (i in 0 until N) {
                 if (parent[k - 1][i] == -1) {
                     parent[k][i] = -1
                 } else {
