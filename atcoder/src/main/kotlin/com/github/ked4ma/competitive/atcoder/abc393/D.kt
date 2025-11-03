@@ -1,10 +1,8 @@
 package com.github.ked4ma.competitive.atcoder.abc393
 
-import com.github.ked4ma.competitive.common.array.long.d1.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.abs
-import kotlin.math.min
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {

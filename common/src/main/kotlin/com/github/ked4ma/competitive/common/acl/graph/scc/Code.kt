@@ -3,7 +3,6 @@ package com.github.ked4ma.competitive.common.acl.graph.scc
 import com.github.ked4ma.competitive.common.acl.internal.csr.*
 import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.list.d1.*
-import com.github.ked4ma.competitive.common.repeat.*
 import java.util.*
 import kotlin.math.min
 
@@ -52,10 +51,10 @@ class SCCGraph(val n: Int) {
                 groupNum++
             }
         }
-        for (i in range(n)) {
+        for (i in 0 until n) {
             if (ord[i] == -1) dfs(i)
         }
-        for (i in range(n)) {
+        for (i in 0 until n) {
             ids[i] = groupNum - 1 - ids[i]
         }
         return groupNum to ids
@@ -66,7 +65,7 @@ class SCCGraph(val n: Int) {
         val counts = sizedIntArray(groupNum, 0)
         for (x in ids) counts[x]++
         val groups = sizedListOf(groupNum) { mutableListOf<Int>() }
-        for (i in range(n)) {
+        for (i in 0 until n) {
             groups[ids[i]].add(i)
         }
         return groups.toTypedArray()

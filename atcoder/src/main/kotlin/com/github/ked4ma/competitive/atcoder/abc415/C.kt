@@ -1,11 +1,11 @@
 package com.github.ked4ma.competitive.atcoder.abc415
 
 import com.github.ked4ma.competitive.common.array.boolean.d1.*
-import com.github.ked4ma.competitive.common.debug._debug_println
+import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.math.int.pow.*
 import com.github.ked4ma.competitive.common.number.int.bit.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {

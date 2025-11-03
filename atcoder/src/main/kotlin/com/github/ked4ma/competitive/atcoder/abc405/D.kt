@@ -2,6 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc405
 
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {
@@ -30,4 +31,5 @@ fun main() {
             queue.addLast(nh to nw)
         }
     }
-    println(S.joinToString("\n") { it.concatToString() }) }
+    println(S.joinToString("\n") { it.concatToString() })
+}

@@ -6,7 +6,7 @@ import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.*
 import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.ruq.sum.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {

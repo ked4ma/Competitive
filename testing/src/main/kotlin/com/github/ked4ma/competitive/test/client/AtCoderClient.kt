@@ -66,9 +66,9 @@ class AtCoderClient : BaseTaskClient(Platform.ATCODER) {
         val html = client.get(url).bodyAsText()
         val re = "[入出]力例\\s?\\d+".toRegex()
         val document = Jsoup.parse(html)
-        val exampleSelector = if (document.selectFirst(".lang-ja") == null) {
+        val exampleSelector = if (document.selectFirst("#task-statement") != null) {
             // old contest (e.g. abc041) doesn't have element with 'lang-ja' class
-            "#task-statement > section"
+            "#task-statement section"
         } else {
             ".lang-ja .part > section:nth-child(1)"
         }

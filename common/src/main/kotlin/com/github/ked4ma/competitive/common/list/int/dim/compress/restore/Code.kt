@@ -10,7 +10,7 @@ import com.github.ked4ma.competitive.common.repeat.*
 fun List<Int>.compressAndRestore(): Pair<List<Int>, Map<Int, Int>> {
     val comp = this.compress()
     val rest = buildMap {
-        for (i in range(this@compressAndRestore.size)) {
+        for (i in 0 until this@compressAndRestore.size) {
             put(comp[i], this@compressAndRestore[i])
         }
     }

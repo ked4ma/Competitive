@@ -3,7 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc386
 import com.github.ked4ma.competitive.common.array.int.d2.*
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.abs
 import kotlin.math.min
 

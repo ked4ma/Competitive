@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc415
 
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.models.tree.segment.general.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.max
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
