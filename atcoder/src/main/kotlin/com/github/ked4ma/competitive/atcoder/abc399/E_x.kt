@@ -3,7 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc399
 import com.github.ked4ma.competitive.common.acl.graph.scc.*
 import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {

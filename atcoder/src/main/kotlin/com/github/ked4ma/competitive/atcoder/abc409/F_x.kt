@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc409
 
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.models.unionfind.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import java.util.*
 import kotlin.math.abs
 

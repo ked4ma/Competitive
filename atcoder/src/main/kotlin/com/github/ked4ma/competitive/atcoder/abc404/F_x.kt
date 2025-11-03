@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc404
 
 import com.github.ked4ma.competitive.common.array.double.d2.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.max
 import kotlin.math.min
 

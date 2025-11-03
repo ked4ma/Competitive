@@ -3,7 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc408
 import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.number.inf.*
-import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.min
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]

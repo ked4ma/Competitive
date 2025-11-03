@@ -5,6 +5,7 @@ import com.github.ked4ma.competitive.common.array.permutation.int.*
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.min
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]

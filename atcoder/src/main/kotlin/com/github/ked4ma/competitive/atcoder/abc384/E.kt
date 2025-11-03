@@ -3,6 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc384
 import com.github.ked4ma.competitive.common.array.boolean.d2.*
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.repeat.*
+import com.github.ked4ma.competitive.common.repeat.range.*
 import java.util.*
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
