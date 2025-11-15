@@ -51,6 +51,10 @@ class CumulativeSum2D {
         data[h + 1][w + 1] = n.toLong()
     }
 
+    fun add(h: Int, w: Int, n: Number) {
+        data[h + 1][w + 1] += n.toLong()
+    }
+
     fun build() {
         for (i in 0 until h) {
             for (j in 0 until w) {
