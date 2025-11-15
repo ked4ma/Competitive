@@ -30,6 +30,9 @@ class FenwickTree(private val size: Int) {
         return ans
     }
 
+    // sum of [l, r)
+    // @param left  (inclusive)
+    // @param right (exclusive)
     fun sum(left: Int, right: Int = size): Long {
         _debug_require(left in 0..right && right <= size) { "need: 0 <= left <= right <= $size (actual: $left, $right)" }
         return sum(right) - sum(left)
