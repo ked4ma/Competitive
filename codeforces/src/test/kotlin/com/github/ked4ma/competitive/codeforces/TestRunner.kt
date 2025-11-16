@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource
 
 class TestRunner {
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "No.{index}")
     @MethodSource("sampleProvider")
     fun testEachSample(input: String, expected: String) = runBlocking {
         val actual = RUNNER.exec(input, expected)
