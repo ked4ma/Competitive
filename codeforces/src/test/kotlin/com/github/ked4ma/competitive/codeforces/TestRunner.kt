@@ -58,21 +58,8 @@ class TestRunner {
             return listOf(
                 Arguments.of(
                     """
-                        3
-                        1 100
-                        1
-                        27
-                        3 10
-                        5 6 5
-                        7 1 7
-                        5 42
-                        5 4 2 2 1
-                        9 8 9 8 100
                     """.trimIndent(),
                     """
-                        1
-                        0
-                        3
                     """.trimIndent(),
                 ),
             )

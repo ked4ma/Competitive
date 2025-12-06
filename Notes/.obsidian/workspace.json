@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Knowledge/Combination.md",
+                "file": "Knowledge/Divider(約数の列挙).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Combination"
+              "title": "Divider(約数の列挙)"
             }
           }
         ]
@@ -186,10 +186,11 @@
   },
   "active": "bb3e9a92868ba06c",
   "lastOpenFiles": [
+    "Knowledge/Combination.md",
+    "Knowledge/Divider(約数の列挙).md",
     "Extra/Resources/Screenshot from 2025-11-23 19-56-07.png",
     "Knowledge/Inversion Count(転倒数).md",
     "Knowledge/Fermat's little theorem (フェルマーの小定理).md",
-    "Knowledge/Combination.md",
     "Knowledge/LIS (最長増加部分列問題).md",
     "Untitled.md",
     "Knowledge/Pascal's triangle(パスカルの三角形).md",
