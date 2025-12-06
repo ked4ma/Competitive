@@ -5,13 +5,9 @@ class CumulativeSum2D {
     private val w: Int
     val data: Array<LongArray>
 
-
     // NOTE: only use for one time initialization.
     // If need to recreate several time, use set and build func.
-    constructor(arr: Array<Array<out Number>>) {
-        h = arr.size
-        w = arr.first().size
-        data = Array(h + 1) { LongArray(w + 1) { 0L } }
+    constructor(arr: Array<Array<out Number>>) : this(arr.size, arr.first().size) {
         for (i in 0 until h) {
             for (j in 0 until w) {
                 data[i + 1][j + 1] = data[i][j + 1] + data[i + 1][j] - data[i][j] + arr[i][j].toLong()
@@ -19,10 +15,7 @@ class CumulativeSum2D {
         }
     }
 
-    constructor(arr: Array<LongArray>) {
-        h = arr.size
-        w = arr.first().size
-        data = Array(h + 1) { LongArray(w + 1) { 0L } }
+    constructor(arr: Array<IntArray>) : this(arr.size, arr.first().size) {
         for (i in 0 until h) {
             for (j in 0 until w) {
                 data[i + 1][j + 1] = data[i][j + 1] + data[i + 1][j] - data[i][j] + arr[i][j]
@@ -30,10 +23,15 @@ class CumulativeSum2D {
         }
     }
 
-    constructor(list: List<List<Number>>) {
-        h = list.size
-        w = list.first().size
-        data = Array(h + 1) { LongArray(w + 1) { 0L } }
+    constructor(arr: Array<LongArray>) : this(arr.size, arr.first().size) {
+        for (i in 0 until h) {
+            for (j in 0 until w) {
+                data[i + 1][j + 1] = data[i][j + 1] + data[i + 1][j] - data[i][j] + arr[i][j]
+            }
+        }
+    }
+
+    constructor(list: List<List<Number>>) : this(list.size, list.first().size) {
         for (i in 0 until h) {
             for (j in 0 until w) {
                 data[i + 1][j + 1] = data[i][j + 1] + data[i + 1][j] - data[i][j] + list[i][j].toLong()
