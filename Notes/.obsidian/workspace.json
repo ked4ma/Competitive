@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Knowledge/Divider(約数の列挙).md",
+                "file": "Knowledge/Rerooting DP (全方位木DP).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Divider(約数の列挙)"
+              "title": "Rerooting DP (全方位木DP)"
             }
           }
         ]
@@ -186,8 +186,8 @@
   },
   "active": "bb3e9a92868ba06c",
   "lastOpenFiles": [
-    "Knowledge/Combination.md",
     "Knowledge/Divider(約数の列挙).md",
+    "Knowledge/Combination.md",
     "Extra/Resources/Screenshot from 2025-11-23 19-56-07.png",
     "Knowledge/Inversion Count(転倒数).md",
     "Knowledge/Fermat's little theorem (フェルマーの小定理).md",
