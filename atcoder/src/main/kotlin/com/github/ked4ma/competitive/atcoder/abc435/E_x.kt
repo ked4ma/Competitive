@@ -34,4 +34,25 @@ fun main() {
         _debug_println("next: $s")
         println(ans)
     }
+
+    // https://atcoder.jp/contests/abc435/submissions/71648564
+    // val (N, Q) = nextIntList()
+    // val LR = times(Q) {
+    //     val (L, R) = nextIntList()
+    //     L - 1 to R
+    // }
+    // val values = (listOf(0, N) + LR.flatMap { (l, r) -> listOf(l, r) }).sorted().distinct()
+    // val indexMap = values.withIndex().associate { it.value to it.index }
+    // val segTree = LazySegmentTree.RUQ_RSQ(values.size - 1)
+    // segTree.init((0 until values.size - 1).map { (values[it + 1] - values[it]).toLong() })
+    // val ans = sizedLongArray(Q, 0)
+    // for (i in 0 until Q) {
+    //     val lr = LR[i]
+    //     val l = indexMap.getValue(lr.first)
+    //     val r = indexMap.getValue(lr.second)
+    //     _debug_println("$l $r")
+    //     segTree.update(l, r, 0)
+    //     ans[i] = segTree.queryAll()
+    // }
+    // ans.println("\n")
 }
