@@ -1,3 +1,4 @@
+#combination 
 - 計算対象が以下のとき
 $$
 \sum_{i=0,1,...}\binom{l}{i + 1}\binom{r}{i} \tag{1}
