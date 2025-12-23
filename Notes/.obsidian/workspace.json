@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4f45c9d21f99a691",
+        "id": "94fe903eb5368877",
         "type": "tabs",
         "children": [
           {
-            "id": "bb3e9a92868ba06c",
+            "id": "d4e3e4b5be5b7840",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Knowledge/Prim's theory (プリム法).md",
+                "file": "Knowledge/Loop of Graph (グラフのループ検出).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Prim's theory (プリム法)"
+              "title": "Loop of Graph (グラフのループ検出)"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#combination",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 338.5
   },
   "right": {
     "id": "4d7b2280dff3f192",
@@ -184,22 +184,25 @@
       "bases:Create new base": false
     }
   },
-  "active": "bb3e9a92868ba06c",
+  "active": "d4e3e4b5be5b7840",
   "lastOpenFiles": [
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Knowledge/Combination.md",
+    "Knowledge/Pascal's triangle(パスカルの三角形).md",
+    "Knowledge/Loop of Graph (グラフのループ検出).md",
+    "Knowledge/Prim's theory (プリム法).md",
     "Knowledge/Rerooting DP (全方位木DP).md",
     "Knowledge/Doubling (ダブリング).md",
     "Extra/Resources/Screenshot from 2025-12-16 02-07-14.png",
     "Extra/Resources/Screenshot from 2025-12-16 02-07-06.png",
     "Extra/Resources/Screenshot from 2025-12-16 02-06-54.png",
     "Knowledge/Tree's centroid (木の重心).md",
-    "Knowledge/Prim's theory (プリム法).md",
-    "Knowledge/Pascal's triangle(パスカルの三角形).md",
     "Knowledge/LIS (最長増加部分列問題).md",
     "Knowledge/Kruskal's algorithm (クラスカル法).md",
     "Knowledge/Inversion Count(転倒数).md",
     "Knowledge/Fermat's little theorem (フェルマーの小定理).md",
     "Knowledge/Divider(約数の列挙).md",
-    "Knowledge/Combination.md",
     "Extra/Resources/Screenshot from 2025-11-23 19-56-07.png",
     "Untitled.md",
     "Extra/Resources/Screenshot from 2025-09-28 17-43-51.png",
