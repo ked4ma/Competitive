@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Knowledge/Loop of Graph (グラフのループ検出).md",
+                "file": "Knowledge/Doubling (ダブリング).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Loop of Graph (グラフのループ検出)"
+              "title": "Doubling (ダブリング)"
             }
           }
         ]
@@ -186,11 +186,11 @@
   },
   "active": "d4e3e4b5be5b7840",
   "lastOpenFiles": [
+    "Knowledge/Loop of Graph (グラフのループ検出).md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Knowledge/Combination.md",
     "Knowledge/Pascal's triangle(パスカルの三角形).md",
-    "Knowledge/Loop of Graph (グラフのループ検出).md",
     "Knowledge/Prim's theory (プリム法).md",
     "Knowledge/Rerooting DP (全方位木DP).md",
     "Knowledge/Doubling (ダブリング).md",
