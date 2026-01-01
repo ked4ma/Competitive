@@ -35,6 +35,9 @@ class GeneralFenwickTree<T>(
         return ans
     }
 
+    // sum of [l, r)
+    // @param left  (inclusive)
+    // @param right (exclusive)
     fun sum(left: Int, right: Int = size): T {
         _debug_require(left in 0..right && right <= size) { "need: 0 <= left <= right <= $size (actual: $left, $right)" }
         return minus(sum(right), sum(left))
