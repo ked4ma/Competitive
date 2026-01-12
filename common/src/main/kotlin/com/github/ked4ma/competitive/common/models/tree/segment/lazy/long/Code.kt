@@ -9,8 +9,13 @@ import com.github.ked4ma.competitive.common.number.int.bit.ceil.*
 // ref:  https://github.com/atcoder/ac-library/blob/master/atcoder/lazysegtree.hpp
 // ref2: https://atcoder.github.io/ac-library/production/document_ja/lazysegtree.html
 // info:
-//   RUQ -> fm: {a, b -> b}
-//   RAQ -> fm: {a, b -> a + b}
+//   update:
+//     RUQ -> fm: {a, b -> b}
+//     RAQ -> fm: {a, b -> a + b}
+//   query:
+//     RSQ -> fp: {m, i -> m * i} // calc actually updated value to the section
+//            fa: {x, m -> x + m} // update value
+//            fa(x, fp(m, i))
 class LazySegmentTree(
     n: Int,
     private val fx: FX,
