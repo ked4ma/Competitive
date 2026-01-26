@@ -40,7 +40,7 @@ fun main() {
     println(ans)
 }
 
-fun gcd(x: ULong, y: ULong): ULong {
+private fun gcd(x: ULong, y: ULong): ULong {
     fun innerGcd(x: ULong, y: ULong): ULong {
         return if (x % y == 0UL) y else innerGcd(y, x % y)
     }
