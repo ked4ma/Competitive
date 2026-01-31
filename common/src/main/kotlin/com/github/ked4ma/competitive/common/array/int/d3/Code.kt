@@ -1,6 +1,6 @@
 package com.github.ked4ma.competitive.common.array.int.d3
 
-fun sized3DIntArray(row: Int, col: Int, dep: Int, default: Int): Array<Array<IntArray>> {
+fun sized3DIntArray(row: Int, col: Int, dep: Int, default: Int = 0): Array<Array<IntArray>> {
     return Array(row) { Array(col) { IntArray(dep) { default } } }
 }
 

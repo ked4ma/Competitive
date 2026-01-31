@@ -1,4 +1,4 @@
-#doubling
+#math #graph #math/doubling #graph/doubling
 Doublingにもいくつかやり方がある
 ### 状態の遷移をそれなりのサイズの行列漸化式で表現できる場合
 たとえば問題に対しての漸化式を以下のように表現できるとき、

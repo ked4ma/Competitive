@@ -1,4 +1,4 @@
-#combination
+#math #math/combination
 数え上げのテクニックとして使える
 ![[Screenshot from 2025-09-28 17-46-01.png]]
 - $aCb$ の$a$が何段目か、$b$がその段の何個目の要素かを示す。
