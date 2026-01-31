@@ -1,6 +1,6 @@
 package com.github.ked4ma.competitive.common.array.long.d2
 
-fun sized2DLongArray(row: Int, col: Int, default: Long): Array<LongArray> {
+fun sized2DLongArray(row: Int, col: Int, default: Long = 0): Array<LongArray> {
     return Array(row) { LongArray(col) { default } }
 }
 

@@ -1,6 +1,6 @@
 package com.github.ked4ma.competitive.common.array.double.d2
 
-fun sized2DDoubleArray(row: Int, col: Int, default: Double): Array<DoubleArray> {
+fun sized2DDoubleArray(row: Int, col: Int, default: Double = 0.0): Array<DoubleArray> {
     return Array(row) { DoubleArray(col) { default } }
 }
 

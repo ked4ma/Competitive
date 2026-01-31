@@ -1,4 +1,4 @@
-#group #interval 
+#group #group/interval 
 隣接関係のあるグループやマス目などの区間のマージを行いながら何かしらの計算(長さなど)を行いたい場合、いくつかやりようがある
 
 ## 1. UnionFind
