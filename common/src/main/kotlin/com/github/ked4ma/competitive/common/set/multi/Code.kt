@@ -39,7 +39,9 @@ class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) 
     fun first(): T = map.firstKey()
     fun last(): T = map.lastKey()
 
+    // get a MAX value that satisfies it <= element
     fun floor(element: T): T? = map.floorKey(element)
+    // get a MIN value that satisfies it >= element
     fun ceiling(element: T): T? = map.ceilingKey(element)
 
     override fun toString(): String = "MultiSet$map"
