@@ -68,10 +68,13 @@ finish:
 	git checkout training/src/main/kotlin/com/github/ked4ma/competitive/training/code/Code.kt
 	git commit -a -m "$(PLATFORM) $(CONTEST_BRANCH)"
 	git switch main
-	git merge --no-ff $(BRANCH)
-	git branch -d $(BRANCH)
-	git tag $(PLATFORM)/$(CONTEST_BRANCH)
-	git push origin main --tags
+	#git merge --no-ff $(BRANCH)
+	git merge --squash $(BRANCH)
+	git commit -m "[$(PLATFORM)] $(CONTEST_BRANCH)"
+	#git branch -d $(BRANCH)
+	#git tag $(PLATFORM)/$(CONTEST_BRANCH)
+	#git push origin main --tags
+	git push origin main
 
 clean:
 	./gradlew clean
