@@ -71,10 +71,10 @@ finish:
 	#git merge --no-ff $(BRANCH)
 	git merge --squash $(BRANCH)
 	git commit -m "[$(PLATFORM)] $(CONTEST_BRANCH)"
-	#git branch -d $(BRANCH)
+	git push origin main
+	git branch -D $(BRANCH)
 	#git tag $(PLATFORM)/$(CONTEST_BRANCH)
 	#git push origin main --tags
-	git push origin main
 
 clean:
 	./gradlew clean
