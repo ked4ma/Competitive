@@ -1,6 +1,7 @@
 package com.github.ked4ma.competitive.common.models.number.mod.long
 
 import com.github.ked4ma.competitive.common.math.mod.*
+import com.github.ked4ma.competitive.common.math.modinv.*
 
 data class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Comparable<ModLong> {
     init {
@@ -30,23 +31,6 @@ data class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Com
     operator fun minus(n: Int): ModLong = minus(n.toModLong(mod))
     operator fun times(n: Int): ModLong = times(n.toModLong(mod))
     operator fun div(n: Int): ModLong = div(n.toModLong(mod))
-
-    private fun modinv(num: Long, mod: Long): Long {
-        var a = num
-        var b = mod
-        var u = 1L
-        var v = 0L
-        while (b > 0) {
-            val t = a.div(b)
-            a -= t * b
-            a = b.also { b = a } // swap a and b
-            u -= t * v
-            u = v.also { v = u } // swap u and v
-        }
-        u %= mod
-        if (u < 0) u += mod
-        return u
-    }
 }
 
 fun Int.toModLong() = this.toLong().toModLong()
