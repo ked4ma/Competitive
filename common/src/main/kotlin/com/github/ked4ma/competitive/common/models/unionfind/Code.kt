@@ -6,7 +6,7 @@ import com.github.ked4ma.competitive.common.array.int.d1.*
 // UnionFind
 // @param size num of elements
 // @param unionBySize enable "union-by-size" (default: true)
-class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
+class UnionFind(size: Int, private val unionBySize: Boolean = true) {
     private val r = sizedIntArray(size, -1)
 
     // find root
@@ -41,6 +41,7 @@ class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
         var rx = find(x)
         var ry = find(y)
         if (rx == ry) return
+        size--
         if (unionBySize && r[rx] > r[ry]) {
             val tmp = rx
             rx = ry
@@ -52,10 +53,11 @@ class UnionFind(val size: Int, private val unionBySize: Boolean = true) {
         r[ry] = rx
     }
 
-    fun size(x: Int) = -r[find(x)]
-    fun size() = uniqueRoots.size
-
     fun same(x: Int, y: Int) = find(x) == find(y)
+
+    fun size(x: Int) = -r[find(x)]
+    var size = size
+        private set
 
     override fun toString(): String {
         return r.joinToString(separator = ", ")
