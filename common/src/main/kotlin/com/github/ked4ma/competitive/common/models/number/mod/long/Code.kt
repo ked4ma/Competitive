@@ -31,6 +31,13 @@ data class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Com
     operator fun minus(n: Int): ModLong = minus(n.toModLong(mod))
     operator fun times(n: Int): ModLong = times(n.toModLong(mod))
     operator fun div(n: Int): ModLong = div(n.toModLong(mod))
+
+    companion object {
+        var MOD = MOD10e9_7
+        fun reset() {
+            MOD = MOD10e9_7
+        }
+    }
 }
 
 fun Int.toModLong() = this.toLong().toModLong()
