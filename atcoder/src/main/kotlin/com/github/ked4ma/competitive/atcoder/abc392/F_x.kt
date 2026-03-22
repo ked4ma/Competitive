@@ -24,7 +24,7 @@ fun main() {
         _debug_println(segTree.query(0, 4))
         val j = segTree.maxRight(0) { x -> x < P[i] }
         ans[j] = i + 1
-        segTree.update(j, 0)
+        segTree.apply(j, 0)
         _debug_println(segTree.query(j, j + 1))
         _debug_println("$j ${ans.joinToString(" ")}")
     }

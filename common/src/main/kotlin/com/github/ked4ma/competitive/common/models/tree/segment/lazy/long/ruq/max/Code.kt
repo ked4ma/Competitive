@@ -5,13 +5,13 @@ import kotlin.math.max
 
 fun LazySegmentTree.Companion.RUQ_RMQ(
     size: Int,
-    ex: Long = Long.MIN_VALUE,
-    em: Long = Long.MIN_VALUE
+    e: Long = Long.MIN_VALUE,
+    id: Long = Long.MIN_VALUE
 ) = LazySegmentTree(
     n = size,
-    fx = { x1, x2 -> max(x1, x2) },
-    fa = { _, m -> m },
-    fm = { _, m2 -> m2 },
-    ex = ex,
-    em = em,
+    op = { x1, x2 -> max(x1, x2) },
+    mapping = { _, m -> m },
+    composition = { _, m2 -> m2 },
+    e = e,
+    id = id,
 )

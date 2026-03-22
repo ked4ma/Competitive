@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.codeforces.`2185`
 
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.general.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.general.GeneralSegmentTree
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {
@@ -19,9 +19,9 @@ private fun solve() {
 
     data class D(val i: Int, val j: Int, val k: Boolean)
 
-    val segTree = GeneralSegmentTree.getInstance(
+    val segTree = GeneralSegmentTree.getInstance<D, D>(
         n = n,
-        fx = { x1, x2 ->
+        op = { x1, x2 ->
             var x = x1
             var y = x2
             if (x1.i < x2.i) {
@@ -41,19 +41,18 @@ private fun solve() {
             }
             D(z, l, t)
         },
-        fm = { _, m -> m },
-        ex = D(0, 1, false)
+        mapping = { _, m -> m },
+        e = D(0, 1, false)
     )
 
     for (i in 0 until n) {
         segTree.set(i, D(a[i], 1, false))
     }
-    segTree.build()
     repeat(q) {
         val (b, c) = nextIntList().let { (b, c) -> b - 1 to c }
-        segTree.update(b, D(c, 0, true))
+        segTree.set(b, D(c, 0, true))
         _debug_println(segTree.query(0, n))
         println(segTree.query(0, n).j)
-        segTree.update(b, D(a[b], 1, false))
+        segTree.set(b, D(a[b], 1, false))
     }
 }

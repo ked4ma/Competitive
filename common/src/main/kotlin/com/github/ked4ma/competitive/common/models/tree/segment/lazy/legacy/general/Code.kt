@@ -7,6 +7,13 @@ import com.github.ked4ma.competitive.common.array.any.d1.*
 // info:
 //   RUQ -> fm: {a, b -> b}
 //   RAQ -> fm: {a, b -> a + b}
+@Deprecated(
+    "This is Legacy implementation.",
+    ReplaceWith(
+        "GeneralLazySegmentTree",
+        "com.github.ked4ma.competitive.common.acl.tree.segment.lazy.general"
+    )
+)
 class GeneralLazySegmentTree<X, M>(
     private val n: Int,
     private val dat: Array<X>,

@@ -9,7 +9,6 @@ data class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Com
     }
 
     override fun toByte(): Byte = value.toByte()
-    override fun toChar(): Char = value.toInt().toChar()
     override fun toDouble(): Double = value.toDouble()
     override fun toFloat(): Float = value.toFloat()
     override fun toInt(): Int = value.toInt()

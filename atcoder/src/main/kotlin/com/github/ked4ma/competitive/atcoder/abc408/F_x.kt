@@ -3,7 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc408
 import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.array.long.d1.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.long.*
 import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.max
 import kotlin.math.min
@@ -23,14 +23,14 @@ fun main() {
     val dp = sizedLongArray(N, 0)
     val segTree = SegmentTree(
         n = N,
-        fx = { x1, x2 -> max(x1, x2) },
-        fm = { _, m2 -> m2 },
-        ex = -1,
+        op = { x1, x2 -> max(x1, x2) },
+        mapping = { _, m2 -> m2 },
+        e = -1,
     )
     for (h in range(N)) {
         if (h >= D) {
             val j = HI[h - D]
-            segTree.update(j, dp[j])
+            segTree.set(j, dp[j])
         }
         val i = HI[h]
         // [l, r)

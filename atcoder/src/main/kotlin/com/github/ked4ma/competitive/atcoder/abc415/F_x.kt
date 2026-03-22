@@ -1,7 +1,7 @@
 package com.github.ked4ma.competitive.atcoder.abc415
 
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.general.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.general.GeneralSegmentTree
 import com.github.ked4ma.competitive.common.repeat.range.*
 import kotlin.math.max
 
@@ -10,9 +10,9 @@ fun main() {
     val (N, Q) = nextIntList()
     val S = nextCharArray()
 
-    val segTree = GeneralSegmentTree.getInstance<T>(
+    val segTree = GeneralSegmentTree.getInstance<T, T>(
         n = N,
-        fx = { a, b ->
+        op = { a, b ->
             if (a.ans == 0) {
                 b
             } else if (b.ans == 0) {
@@ -30,15 +30,14 @@ fun main() {
                 T(ans, lc, l, rc, r, same)
             }
         },
-        fm = { _, b -> b },
-        ex = T(0, '?', 0, '?', 0, false)
+        mapping = { _, b -> b },
+        e = T(0, '?', 0, '?', 0, false)
     )
 
     fun newT(c: Char) = T(1, c, 1, c, 1, true)
     for (i in range(N)) {
         segTree.set(i, newT(S[i]))
     }
-    segTree.build()
 
     repeat(Q) {
         val query = nextList()
@@ -46,7 +45,7 @@ fun main() {
             "1" -> {
                 val i = query[1].toInt() - 1
                 val c = query[2][0]
-                segTree.update(i, newT(c))
+                segTree.set(i, newT(c))
             }
 
             "2" -> {

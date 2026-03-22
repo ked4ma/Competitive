@@ -5,13 +5,13 @@ import kotlin.math.min
 
 fun LazySegmentTree.Companion.RAQ_RmQ(
     size: Int,
-    ex: Long = Long.MAX_VALUE,
-    em: Long = 0L
+    e: Long = Long.MAX_VALUE,
+    id: Long = 0L
 ) = LazySegmentTree(
     n = size,
-    fx = { x1, x2 -> min(x1, x2) },
-    fa = { x, m -> x + m },
-    fm = { m1, m2 -> m1 + m2 },
-    ex = ex,
-    em = em,
+    op = { x1, x2 -> min(x1, x2) },
+    mapping = { x, m -> x + m },
+    composition = { m1, m2 -> m1 + m2 },
+    e = e,
+    id = id,
 )

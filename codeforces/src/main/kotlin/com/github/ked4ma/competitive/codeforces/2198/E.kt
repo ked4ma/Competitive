@@ -32,7 +32,7 @@ private fun solve() {
             ans++
         }
     }
-    ans += uf.size() - uf2.size()
+    ans += uf.size - uf2.size
     println(ans)
 //    val F = sizedArray(n) { mutableSetOf<Int>() }
 //    val G = sizedArray(n) { mutableSetOf<Int>() }

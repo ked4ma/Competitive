@@ -10,10 +10,10 @@ fun main() {
     val S = nextCharArray()
     val T = nextCharArray()
 
-    val segTree = LazySegmentTree.RAQ_RMQ(N, ex = 0L)
+    val segTree = LazySegmentTree.RAQ_RMQ(N, e = 0L)
     repeat(M) {
         val (l, r) = nextIntList()
-        segTree.update(l - 1, r, 1)
+        segTree.apply(l - 1, r, 1)
     }
     val ans = StringBuilder()
     for (i in 0 until N) {

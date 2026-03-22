@@ -2,6 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc437
 
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.models.tree.segment.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.long.SegmentTree
 import kotlin.math.abs
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
@@ -18,20 +19,20 @@ fun main() {
         vMaxSeg.set(it, X - Y)
         vMinSeg.set(it, X - Y)
     }
-    uMaxSeg.build()
-    uMinSeg.build()
-    vMaxSeg.build()
-    vMinSeg.build()
+    // uMaxSeg.build()
+    // uMinSeg.build()
+    // vMaxSeg.build()
+    // vMinSeg.build()
 
     repeat(Q) {
         val query = nextIntList()
         when (query[0]) {
             1 -> {
                 val (_, i, x, y) = query
-                uMaxSeg.update(i - 1, x.toLong() + y)
-                uMinSeg.update(i - 1, x.toLong() + y)
-                vMaxSeg.update(i - 1, x.toLong() - y)
-                vMinSeg.update(i - 1, x.toLong() - y)
+                uMaxSeg.set(i - 1, x.toLong() + y)
+                uMinSeg.set(i - 1, x.toLong() + y)
+                vMaxSeg.set(i - 1, x.toLong() - y)
+                vMinSeg.set(i - 1, x.toLong() - y)
             }
 
             2 -> {

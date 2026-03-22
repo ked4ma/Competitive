@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc435
 
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.long.SegmentTree
 import kotlin.math.abs
 import kotlin.math.max
 

@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc405
 
 import com.github.ked4ma.competitive.common.array.long.d1.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.long.SegmentTree
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {

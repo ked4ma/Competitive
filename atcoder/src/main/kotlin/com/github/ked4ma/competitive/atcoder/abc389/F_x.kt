@@ -3,7 +3,7 @@ package com.github.ked4ma.competitive.atcoder.abc389
 import com.github.ked4ma.competitive.common.array.long.d1.*
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.long.SegmentTree
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {
@@ -33,8 +33,8 @@ fun main() {
         val (L, R) = nextIntList()
         val li = lwb(L)
         val ri = lwb(R + 1)
-        segTree.update(li, 1)
-        segTree.update(ri, -1)
+        segTree.set(li, 1)
+        segTree.set(ri, -1)
     }
 
     val Q = nextInt()

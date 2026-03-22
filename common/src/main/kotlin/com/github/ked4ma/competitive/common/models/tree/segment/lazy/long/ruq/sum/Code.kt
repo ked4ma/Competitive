@@ -4,14 +4,14 @@ import com.github.ked4ma.competitive.common.models.tree.segment.lazy.long.*
 
 fun LazySegmentTree.Companion.RUQ_RSQ(
     size: Int,
-    ex: Long = 0,
-    em: Long = Long.MIN_VALUE
+    e: Long = 0,
+    id: Long = Long.MIN_VALUE
 ) = LazySegmentTree(
     n = size,
-    fx = { x1, x2 -> x1 + x2 },
-    fa = { _, m -> m },
-    fm = { _, m2 -> m2 },
-    fp = { m, i -> m * i },
-    ex = ex,
-    em = em,
+    op = { x1, x2 -> x1 + x2 },
+    mapping = { _, m -> m },
+    composition = { _, m2 -> m2 },
+    propagation = { m, i -> m * i },
+    e = e,
+    id = id,
 )

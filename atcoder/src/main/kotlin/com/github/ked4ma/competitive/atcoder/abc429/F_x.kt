@@ -4,7 +4,7 @@ import com.github.ked4ma.competitive.common.array.char.d2.*
 import com.github.ked4ma.competitive.common.array.int.d2.*
 import com.github.ked4ma.competitive.common.debug.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.models.tree.segment.general.*
+import com.github.ked4ma.competitive.common.models.tree.segment.normal.general.*
 import com.github.ked4ma.competitive.common.number.inf.*
 import com.github.ked4ma.competitive.common.repeat.*
 import kotlin.math.abs
@@ -22,9 +22,9 @@ fun main() {
         }
         s
     }
-    val segTree = GeneralSegmentTree.getInstance<Array<IntArray>>(
+    val segTree = GeneralSegmentTree.getInstance<Array<IntArray>, Array<IntArray>>(
         n = N,
-        fx = { x1, x2 ->
+        op = { x1, x2 ->
             val next = sized2DIntArray(3, 3, INT_INF)
             for (k in 0 until 3) {
                 for (i in 0 until 3) {
@@ -35,8 +35,8 @@ fun main() {
             }
             next
         },
-        fm = { _, m2 -> m2 },
-        ex = arrayOf(
+        mapping = { _, m2 -> m2 },
+        e = arrayOf(
             intArrayOf(0, INT_INF, INT_INF),
             intArrayOf(INT_INF, 0, INT_INF),
             intArrayOf(INT_INF, INT_INF, 0),
@@ -127,7 +127,7 @@ fun main() {
         val (r, c) = nextIntList().map { it - 1 }
         S[c][r] = if (S[c][r] == '.') '#' else '.'
         val arr = genArr(S[c])
-        segTree.update(c, arr)
+        segTree.set(c, arr)
         var ans = segTree.query(0, N)[0][2] + N - 1
         if (ans >= INT_INF) ans = -1
         println(ans)
