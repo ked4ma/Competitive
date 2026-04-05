@@ -32,8 +32,8 @@ class UnionFind(size: Int, private val unionBySize: Boolean = true) {
         get() = r.indices.map { find(it) }
     val uniqueRoots: Set<Int>
         get() = buildSet {
-            r.indices.forEach {
-                add(find(it))
+            r.indices.forEach { i ->
+                if (r[i] < 0) add(i)
             }
         }
 
