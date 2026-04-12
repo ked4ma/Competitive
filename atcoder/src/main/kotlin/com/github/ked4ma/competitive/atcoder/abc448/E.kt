@@ -1,6 +1,7 @@
 package com.github.ked4ma.competitive.atcoder.abc448
 
 import com.github.ked4ma.competitive.common.input.default.*
+import com.github.ked4ma.competitive.common.math.mod.*
 import com.github.ked4ma.competitive.common.models.number.mod.long.*
 import com.github.ked4ma.competitive.common.number.int.bit.*
 import com.github.ked4ma.competitive.common.repeat.*
@@ -48,7 +49,7 @@ fun main() {
     }
 
     val p = 10007L
-    ModLong.MOD = p * M
+    MOD = p * M
     val ans = f().toLong() / M
     println(ans)
 //    val ans = (f(p) - f(M.toLong())) / M.toModLong(p)

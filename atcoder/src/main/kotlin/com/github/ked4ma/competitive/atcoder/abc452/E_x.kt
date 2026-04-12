@@ -8,7 +8,7 @@ import kotlin.math.min
 
 // make run <TASK: A/B/...> [BRANCH=contest/<CONTEST: abc000>]
 fun main() {
-    ModLong.MOD = MOD998244353
+    MOD = MOD998244353
     val (N, M) = nextIntList().map { it + 1 }
     val A = listOf(0L) + nextLongList()
     val B = listOf(0L) + nextLongList()

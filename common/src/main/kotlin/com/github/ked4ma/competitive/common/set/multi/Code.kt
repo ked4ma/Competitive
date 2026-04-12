@@ -33,6 +33,7 @@ class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) 
     fun count(element: T): Int = map[element] ?: 0
 
     fun isEmpty(): Boolean = map.isEmpty()
+    fun isNotEmpty(): Boolean = map.isNotEmpty()
 
     fun elements(): List<T> = map.flatMap { (key, value) -> List(value) { key } }
 
@@ -41,6 +42,7 @@ class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) 
 
     // get a MAX value that satisfies it <= element
     fun floor(element: T): T? = map.floorKey(element)
+
     // get a MIN value that satisfies it >= element
     fun ceiling(element: T): T? = map.ceilingKey(element)
 
