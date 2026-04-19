@@ -12,6 +12,7 @@ serialization = "1.9.0"
 slf4jSimple = "2.0.17"
 
 [libraries]
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinCommon" }
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
 junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit" }
 kotlinxCoroutinesCore = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
@@ -34,4 +35,7 @@ testing = [
     "ktorClientCore",
     "ktorClientCio",
     "slf4jSimple"
+]
+plugins = [
+    "kotlinGradlePlugin"
 ]
