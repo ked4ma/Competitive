@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technic/Interval (区間).md",
+                "file": "Technic/SegTree.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interval (区間)"
+              "title": "SegTree"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "begin",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -186,10 +186,17 @@
   },
   "active": "d4e3e4b5be5b7840",
   "lastOpenFiles": [
+    "Knowledge/Principle of Inclusion-Exclusion (包除原理).md",
+    "Technic/SegTree.md",
+    "Knowledge/Group,Interval Merge (グループ,区間のマージ).md",
+    "Technic/Interval (区間).md",
+    "Knowledge/Combination.md",
+    "Knowledge/Set Comparison (集合の一致判定).md",
+    "Knowledge/Bipartite Graph (二部グラフ).md",
+    "Extra/Resources/Screenshot from 2026-04-26 18-17-59.png",
     "Knowledge/Mod technics.md",
     "Knowledge/Inversion Count(転倒数).md",
     "Knowledge/GCD.md",
-    "Technic/Interval (区間).md",
     "Extra/Resources/Screenshot from 2026-04-12 19-09-42.png",
     "Extra/Resources/Pasted image 20260412190951.png",
     "Knowledge/Pasted image 20260412190951.png",
@@ -198,19 +205,15 @@
     "2026-04-12.md",
     "Technic/Mod.md",
     "Untitled.canvas",
-    "Knowledge/Group,Interval Merge (グループ,区間のマージ).md",
     "Technic",
     "Knowledge/LIS (最長増加部分列問題).md",
     "Knowledge/Prim's theory (プリム法).md",
     "Knowledge/Kruskal's algorithm (クラスカル法).md",
-    "Knowledge/Bipartite Graph (二部グラフ).md",
     "Extra/Resources/Screenshot from 2026-03-29 19-28-41.png",
     "Extra/Resources/Screenshot from 2026-03-29 19-28-54.png",
     "Knowledge/Loop of Graph (グラフのループ検出).md",
-    "Knowledge/Set Comparison (集合の一致判定).md",
     "Knowledge/Color Coding.md",
     "Knowledge/Declination Sort (偏角ソート).md",
-    "Knowledge/Combination.md",
     "Knowledge/Pascal's triangle(パスカルの三角形).md",
     "Knowledge/Prime Factorization (素因数分解).md",
     "Extra/Resources/Screenshot from 2026-02-15 17-14-11.png",
@@ -218,13 +221,10 @@
     "Knowledge/Doubling (ダブリング).md",
     "Knowledge/Fermat's little theorem (フェルマーの小定理).md",
     "Extra/Resources/Screenshot from 2026-01-25 21-23-20.png",
-    "Extra/Resources/Screenshot from 2026-01-24 01-09-57.png",
     "Knowledge/Divider(約数の列挙).md",
     "Untitled 1.canvas",
     "Knowledge/Rerooting DP (全方位木DP).md",
     "Knowledge/Tree's centroid (木の重心).md",
-    "Untitled.md",
-    "Welcome.md",
     "Extra/Resources",
     "Extra",
     "Knowledge",
