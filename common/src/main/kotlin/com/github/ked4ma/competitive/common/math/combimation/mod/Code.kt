@@ -30,7 +30,8 @@ class CombinationMod(n: Int, private val mod: Long = MOD) {
     // duplicated combination
     // ref: https://frontiesta.com/homogeneous/#toc2
     // oo|o||ooo -> o:6, |:3
-    // split six "o" into 4 groups -> 4H6
+    // split 6 "o" into 4 groups -> 4H6
+    // n: 4, k: 6
     fun nHk(n: Int, k: Int): Long {
         return aCb(n + k - 1, k)
     }

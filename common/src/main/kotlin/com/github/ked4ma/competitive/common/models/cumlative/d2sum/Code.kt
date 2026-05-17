@@ -64,6 +64,22 @@ class CumulativeSum2D {
     // get sum
     // NOTE: [startX,endX], [startY,endY]
     //   sections are all inclusive
+    // @Deprecated(
+    //     "use sumOf(...) instead",
+    //     replaceWith = ReplaceWith("this.sumOf(startX, startY, endX + 1, endY + 1)")
+    // )
     fun getSumOf(startX: Int, startY: Int, endX: Int, endY: Int): Long =
         data[endY + 1][endX + 1] - data[endY + 1][startX] - data[startY][endX + 1] + data[startY][startX]
+
+    // get sum
+    // NOTE:
+    //   (startX,endX): inclusive
+    //   (startY,endY): exclusive
+    fun sumOf(sx: Int, sy: Int, ex: Int, ey: Int): Long =
+        data[ey][ex] - data[ey][sx] - data[sy][ex] + data[sy][sy]
+
+    // get sum of the rectagle of (0,0) -> (x,y)
+    // NOTE:
+    //   (x, y): exclusive
+    fun sumOf(x: Int, y: Int): Long = data[y][x]
 }

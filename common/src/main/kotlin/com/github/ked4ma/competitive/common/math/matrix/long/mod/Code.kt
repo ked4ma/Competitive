@@ -26,7 +26,7 @@ fun Array<LongArray>.powMod(k: Long, mod: Long = MOD): Array<LongArray> {
     return res
 }
 
-fun Array<LongArray>.timesMod(other: Array<LongArray>, mod: Long): Array<LongArray> {
+fun Array<LongArray>.timesMod(other: Array<LongArray>, mod: Long = MOD): Array<LongArray> {
     val r1 = this.size
     val c1 = this.first().size
     val r2 = other.size
