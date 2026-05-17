@@ -2,6 +2,8 @@ package com.github.ked4ma.competitive.common.set.multi
 
 import java.util.*
 
+typealias MultiSetEntry<T, Int> = Map.Entry<T, Int>
+
 // Provide Set that can have same values in it.
 // And values in this set is sorted by comparator.
 // So you can get min / max value by first / last (by default).
@@ -47,4 +49,6 @@ class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) 
     fun ceiling(element: T): T? = map.ceilingKey(element)
 
     override fun toString(): String = "MultiSet$map"
+
+    operator fun iterator(): Iterator<MultiSetEntry<T, Int>> = map.iterator()
 }
