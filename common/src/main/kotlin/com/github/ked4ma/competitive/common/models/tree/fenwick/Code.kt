@@ -9,7 +9,7 @@ class FenwickTree(val size: Int) {
     private val arr = LongArray(size) { 0L }
 
     fun add(index: Int, value: Long) {
-        _debug_require(index in 0 until size) { "index must be in range [0,$size)" }
+        _debug_require(index in 0 until size) { "index($index) must be in range [0,$size)" }
         var i = index + 1
         while (i <= size) {
             arr[i - 1] += value
