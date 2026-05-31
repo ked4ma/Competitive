@@ -1,6 +1,6 @@
 package com.github.ked4ma.competitive.common.math.lcm
 
-import com.github.ked4ma.competitive.common.math.gcd.*
+import com.github.ked4ma.competitive.common.math.gcd.ulong.gcd
 
 // a * b = lcm(a, b) * gcd(a, b)
 fun lcm(a: Int, b: Int): Int {

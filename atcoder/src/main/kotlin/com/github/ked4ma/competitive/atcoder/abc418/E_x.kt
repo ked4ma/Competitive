@@ -2,7 +2,7 @@ package com.github.ked4ma.competitive.atcoder.abc418
 
 import com.github.ked4ma.competitive.common.input.default.*
 import com.github.ked4ma.competitive.common.math.combimation.*
-import com.github.ked4ma.competitive.common.math.gcd.*
+import com.github.ked4ma.competitive.common.math.gcd.ulong.gcd
 import com.github.ked4ma.competitive.common.repeat.*
 import kotlin.math.abs
 
