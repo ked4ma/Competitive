@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#dp",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -185,7 +184,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "d4e3e4b5be5b7840",
+  "active": "9e731876ce7eea0c",
   "lastOpenFiles": [
     "Knowledge/Rerooting DP (全方位木DP).md",
     "Knowledge/Cartesian Tree.md",

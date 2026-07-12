@@ -30,3 +30,32 @@ for (i in M - 1 downTo 0) {
 	}
 }
 ```
+
+```kotlin
+var dp = sized2DLongArray(2, s)
+dp[0][0] = 1
+for (i in 0 until m) {
+  val n = N[i]
+  var pre = sized2DLongArray(2, s)
+  // swap
+  dp = pre.also{ pre = dp }
+  for (j in 0 until 2) {
+    for (k in 0 until s) {
+      val now = dp[j][k]
+	  for (x in 0 until 10) {
+	    var nj = j
+		if (j == 0) {
+		  if (x > n) continue
+		  if (x < n) nj = 1
+		}
+		// やりたい計算
+		val ns = ...
+		
+		dp[nj][ns] += now
+	  }
+    }
+  }
+}
+```
+## 実装時の注意
+- $nj$ の変数定義の場所は計算対象の値(後者の例で言えば $x$ )のループの中でやらないと $nj$ がずれて変な計算結果になる
