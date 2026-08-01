@@ -11,6 +11,7 @@ class MultiSet<T : Comparable<T>>(comparator: Comparator<T> = compareBy { it }) 
     private val map = TreeMap<T, Int>(comparator)
     private var _size = 0
     val size get() = _size
+    val keySize get() = map.size
 
     fun add(element: T) {
         map[element] = map.getOrDefault(element, 0) + 1
