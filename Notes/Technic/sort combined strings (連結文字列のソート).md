@@ -41,3 +41,6 @@ AB >& BA \\
 \end{align}
 $$
 とでき、全順序(任意の2要素間で必ず順序関係が成り立つ関係)であることがわかる
+
+## ref
+- https://drken1215.hatenablog.com/entry/2022/12/16/194300
