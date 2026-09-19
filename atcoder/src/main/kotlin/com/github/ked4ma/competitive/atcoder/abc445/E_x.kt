@@ -5,7 +5,7 @@ import com.github.ked4ma.competitive.common.array.int.d1.*
 import com.github.ked4ma.competitive.common.array.long.d1.*
 import com.github.ked4ma.competitive.common.array.long.output.*
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.math.long.pow.*
+import com.github.ked4ma.competitive.common.math.long.mod.*
 import com.github.ked4ma.competitive.common.math.mod.*
 import com.github.ked4ma.competitive.common.number.inf.*
 import kotlin.math.min

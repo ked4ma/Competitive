@@ -1,7 +1,7 @@
 package com.github.ked4ma.competitive.atcoder.abc447
 
 import com.github.ked4ma.competitive.common.input.default.*
-import com.github.ked4ma.competitive.common.math.long.pow.*
+import com.github.ked4ma.competitive.common.math.long.mod.*
 import com.github.ked4ma.competitive.common.math.mod.*
 import com.github.ked4ma.competitive.common.models.unionfind.*
 import com.github.ked4ma.competitive.common.repeat.*
