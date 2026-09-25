@@ -5,7 +5,7 @@ import com.github.ked4ma.competitive.common.math.modinv.*
 
 class ModLong(private var value: Long, val mod: Long = MOD) : Number(), Comparable<ModLong> {
     init {
-        value = ((value % mod) + mod) % mod
+        value = value.mod(mod)
     }
 
     override fun toByte(): Byte = value.toByte()
