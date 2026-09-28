@@ -18,6 +18,18 @@ package com.github.ked4ma.competitive.common.array.long.d1.bitset
  * processing 64 DP states at once and reducing O(N * S) to O(N * S / 64).
  *
  * The bitset is updated in place.
+ *
+ * usage:
+ *   update: mark as enabled [x + n]
+ *   ```
+ *   arr = arr.orShl(n)
+ *   ```
+ *   query: if you want to check X
+ *   ```
+ *   val i = X / 64
+ *   val j = X % 64
+ *   val ans = arr[i].bitAt(j)
+ *   ```
  */
 infix fun LongArray.orShl(shift: Int): LongArray {
     val word = shift / 64
