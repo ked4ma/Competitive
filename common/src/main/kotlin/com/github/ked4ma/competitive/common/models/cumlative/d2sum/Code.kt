@@ -73,10 +73,10 @@ class CumulativeSum2D {
 
     // get sum
     // NOTE:
-    //   (startX,endX): inclusive
-    //   (startY,endY): exclusive
+    //   (startX,startY): inclusive
+    //   (endX,endY): exclusive
     fun sumOf(sx: Int, sy: Int, ex: Int, ey: Int): Long =
-        data[ey][ex] - data[ey][sx] - data[sy][ex] + data[sy][sy]
+        data[ey][ex] - data[ey][sx] - data[sy][ex] + data[sy][sx]
 
     // get sum of the rectagle of (0,0) -> (x,y)
     // NOTE:
